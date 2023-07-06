@@ -31,6 +31,9 @@ If you would like to contribute to this project, please follow the steps below:
 4. Create a pull request to upload your changes.
 5. After going through the review process, your changes will be merged into the main project.
 
+## Technologies
+
+- MVVM
 
 
 ## Getting Started
@@ -42,6 +45,8 @@ This simple conference app allows:
 - [ ] Like or comment to others posts
 - [ ] Follow your friends
 - [ ] Repost others posts
+
+
 
 
 
