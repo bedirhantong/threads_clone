@@ -45,6 +45,7 @@ This simple conference app allows:
 - [ ] Like or comment to others posts
 - [ ] Follow your friends
 - [ ] Repost others posts
+- [ ] Dark and Light Theme 
 
 
 
