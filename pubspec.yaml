@@ -25,6 +25,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_fonts: ^4.0.4
   flutter_native_splash: ^2.3.1
+  liquid_swipe: ^3.1.0
+  smooth_page_indicator: ^1.1.0
 
 # flutter pub add flutter_native_splash
 # dart run flutter_native_splash:create
@@ -58,4 +60,5 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
+    - assets/images/on_boarding_images/
 
