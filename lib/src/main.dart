@@ -38,14 +38,10 @@ class AppHome extends StatelessWidget {
       ),
       body: Padding(
         padding: EdgeInsets.all(20.0),
-        child: ListView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Center(
-              child: Text(
-                'Threads Clone App',
-                style: Theme.of(context).textTheme.headline4,
-              ),
-            ),
             Image.asset(
               'assets/images/threads.png',
               cacheWidth: 80,
