@@ -22,5 +22,17 @@ class ThreadsAppTheme {
       color: Colors.black,
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(),
+    colorScheme: const ColorScheme(
+        background: Colors.black,
+        brightness: Brightness.dark,
+        primary: Colors.white,
+        onPrimary: Colors.white,
+        secondary: Colors.white,
+        onSecondary: Colors.white,
+        error: Colors.white,
+        onError: Colors.white,
+        onBackground: Colors.white,
+        surface: Colors.white,
+        onSurface: Colors.white),
   );
 }
