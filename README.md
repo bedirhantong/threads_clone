@@ -44,7 +44,7 @@ If you would like to contribute to this project, please follow the steps below:
 
 This simple conference app allows:
 
-- [ ] Login and Register
+- [x] Login and Register
 - [ ] Share your feelings
 - [ ] Like or comment to others posts
 - [ ] Follow your friends
