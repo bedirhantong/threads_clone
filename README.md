@@ -18,7 +18,7 @@ This is a clone app of Threads app but with customized features.
 
 ## Setup
 - If you are a developer, you can clone the project from the required IDEs and run it on your computer.
-    - Clone this repository: `https://github.com/bedirhantong/threads_clone.git`
+  - Clone this repository: `https://github.com/bedirhantong/threads_clone.git`
 - If you want to use the application as a user, wait for the new version to be released :)
 
 ## Contribution
@@ -34,6 +34,10 @@ If you would like to contribute to this project, please follow the steps below:
 ## Technologies
 
 - MVVM
+- Google Fonts
+- Flutter Native Splash
+- Liquid Swipe
+- Smooth Page Indicator
 
 
 ## Getting Started
@@ -46,8 +50,3 @@ This simple conference app allows:
 - [ ] Follow your friends
 - [ ] Repost others posts
 - [ ] Dark and Light Theme 
-
-
-
-
-
