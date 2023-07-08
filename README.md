@@ -49,4 +49,16 @@ This simple conference app allows:
 - [ ] Like or comment to others posts
 - [ ] Follow your friends
 - [ ] Repost others posts
-- [ ] Dark and Light Theme 
+- [ ] Dark and Light Theme
+
+## Screenshots
+
+|                  First                   |                  Second                   |                  Third                   |                      Welcome                      |
+|:----------------------------------------:|:-----------------------------------------:|:----------------------------------------:|:-------------------------------------------------:|
+| ![](assets/images/screenshots/first.png) | ![](assets/images/screenshots/second.png) | ![](assets/images/screenshots/third.png) | ![](assets/images/screenshots/fourth_welcome.png) |
+
+|                      Login                      |                  Forgot                   |                   OTP                    |                      Signup                      |
+|:-----------------------------------------------:|:-----------------------------------------:|:----------------------------------------:|:------------------------------------------------:|
+| ![](assets/images/screenshots/login_screen.png) | ![](assets/images/screenshots/second.png) | ![](assets/images/screenshots/third.png) | ![](assets/images/screenshots/signup_screen.png) |
+
+
