@@ -13,7 +13,6 @@ class ThreadsAppTheme {
     appBarTheme: const AppBarTheme(
       color: Colors.white,
     ),
-    backgroundColor: Colors.white,
     elevatedButtonTheme: ElevatedButtonThemeData(),
   );
   static ThemeData darkTheme = ThemeData(
@@ -22,7 +21,6 @@ class ThreadsAppTheme {
     appBarTheme: const AppBarTheme(
       color: Colors.black,
     ),
-    backgroundColor: Colors.black,
     elevatedButtonTheme: ElevatedButtonThemeData(),
   );
 }

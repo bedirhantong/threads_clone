@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:threads_clone/src/features/authentication/screens/welcome/welcome_screen.dart';
 import 'package:threads_clone/src/utils/theme/theme.dart';
 
 void main() {
@@ -31,7 +32,6 @@ class _AppHomeState extends State<AppHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).backgroundColor,
       appBar: AppBar(
         title: Image.asset(
           'assets/images/threads.png',
@@ -84,7 +84,6 @@ class _Page2State extends State<Page2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).backgroundColor,
       appBar: AppBar(
         title: Image.asset(
           'assets/images/threads.png',
@@ -137,7 +136,6 @@ class _Page3State extends State<Page3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).backgroundColor,
       appBar: AppBar(
         title: Image.asset(
           'assets/images/threads.png',
@@ -163,12 +161,12 @@ class _Page3State extends State<Page3> {
             ),
             ElevatedButton(
               onPressed: () {
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //     builder: (context) => GoogleRequestPage(),
-                //   ),
-                // );
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => WelcomeScreen(),
+                  ),
+                );
               },
               child: const Text('Start'),
             ),
