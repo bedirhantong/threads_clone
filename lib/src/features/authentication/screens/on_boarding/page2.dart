@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:threads_clone/src/features/authentication/screens/on_boarding/page3.dart';
-import 'package:threads_clone/src/features/authentication/screens/welcome/welcome_screen.dart';
-import 'package:threads_clone/src/utils/theme/theme.dart';
-
-import '../../../../main.dart';
 
 class Page2 extends StatefulWidget {
   const Page2({super.key});
