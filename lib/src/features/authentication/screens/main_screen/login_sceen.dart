@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'login_footer_widget.dart';
 import 'login_form_widget.dart';
 import 'login_header_widget.dart';
 
@@ -10,7 +11,8 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      // backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Colors.black,
       body: SingleChildScrollView(
         // childini scrollable yapıyor
         child: Container(
@@ -21,35 +23,7 @@ class LoginScreen extends StatelessWidget {
             children: [
               LoginHeaderWidget(size: size),
               const LoginForm(),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text('OR'),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  SizedBox(
-                    width: double.infinity,
-                    child: OutlinedButton.icon(
-                      onPressed: () {},
-                      icon: const Image(
-                        image: AssetImage('assets/images/logo/google.png'),
-                        width: 20.0,
-                      ),
-                      label: Text('Sign-In with Google'),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  TextButton(
-                    onPressed: () {},
-                    child: Text.rich(
-                      TextSpan(),
-                    ),
-                  )
-                ],
-              )
+              const LoginFooterWidget()
             ],
           ),
         ),

@@ -30,7 +30,7 @@ class _AppHomeState extends State<AppHome> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Image.asset(
-              'assets/images/on_boarding_images/page1.png',
+              'assets/images/on_boarding_images/genz.png',
               // 'assets/images/socialmedia.gif',
               cacheWidth: 300,
               cacheHeight: 300,

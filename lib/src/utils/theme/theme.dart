@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:threads_clone/src/utils/theme/widget_themes/text_field_theme.dart';
 import 'package:threads_clone/src/utils/theme/widget_themes/text_theme.dart';
 
 class ThreadsAppTheme {
@@ -14,25 +15,16 @@ class ThreadsAppTheme {
       color: Colors.white,
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(),
+    inputDecorationTheme: TextFormFieldTheme.lightInputDecorationTheme,
   );
+
   static ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
     textTheme: ITextTheme.darkTextTheme,
     appBarTheme: const AppBarTheme(
       color: Colors.black,
     ),
+    inputDecorationTheme: TextFormFieldTheme.darkInputDecorationTheme,
     elevatedButtonTheme: ElevatedButtonThemeData(),
-    colorScheme: const ColorScheme(
-        background: Colors.black,
-        brightness: Brightness.dark,
-        primary: Colors.white,
-        onPrimary: Colors.white,
-        secondary: Colors.white,
-        onSecondary: Colors.white,
-        error: Colors.white,
-        onError: Colors.white,
-        onBackground: Colors.white,
-        surface: Colors.white,
-        onSurface: Colors.white),
   );
 }
