@@ -3,7 +3,6 @@
 This is a clone app of Threads app but with customized features.
 
 
-
 ## Table of Contents
 
 * [Features](#features)
@@ -12,8 +11,6 @@ This is a clone app of Threads app but with customized features.
 * [Technologies](#technologies)
 * [Future additions](#future)
 * [Screenshots](#screenshots)
-
-
 
 
 
