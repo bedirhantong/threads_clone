@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:threads_clone/src/utils/theme/theme.dart';
-import 'features/authentication/screens/on_boarding/app_home.dart';
+import 'src/features/authentication/screens/on_boarding/app_home.dart';
 
 void main() {
   runApp(const MyApp());
