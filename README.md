@@ -2,6 +2,21 @@
 
 This is a clone app of Threads app but with customized features.
 
+
+
+## Table of Contents
+
+* [Features](#features)
+* [Setup](#setup)
+* [Contribution](#contribution)
+* [Technologies](#technologies)
+* [Future additions](#future)
+* [Screenshots](#screenshots)
+
+
+
+
+
 ## Features
 
 - Share what you feel today or delete what you have shared
@@ -42,9 +57,9 @@ If you would like to contribute to this project, please follow the steps below:
   - Flutter Otp Text Field
 
 
-## Getting Started
+## Future
 
-This simple conference app allows:
+This app allows:
 
 - [x] Login and Register
 - [ ] Share your feelings
@@ -55,12 +70,15 @@ This simple conference app allows:
 
 ## Screenshots
 
-|                  First                   |                  Second                   |                  Third                   |                      Welcome                      |
+|                  0000                   |                  0001                   |                  0010                   |                      0011                      |
 |:----------------------------------------:|:-----------------------------------------:|:----------------------------------------:|:-------------------------------------------------:|
 | ![](assets/images/screenshots/first.png) | ![](assets/images/screenshots/second.png) | ![](assets/images/screenshots/third.png) | ![](assets/images/screenshots/fourth_welcome.png) |
 
-|                      Login                      |                  Forgot                   |                  OTP                   |                      Signup                      |
+|                      0100                      |                  0101                   |                  0111                   |                      1000                      |
 |:-----------------------------------------------:|:-----------------------------------------:|:--------------------------------------:|:------------------------------------------------:|
 | ![](assets/images/screenshots/login_screen.png) | ![](assets/images/screenshots/second.png) | ![](assets/images/screenshots/otp.png) | ![](assets/images/screenshots/signup_screen.png) |
 
+|                      1001                      |                  1010                   |                  1011                   |                      1100                      |
+|:-----------------------------------------------:|:-----------------------------------------:|:--------------------------------------:|:------------------------------------------------:|
+| ![](assets/images/screenshots/otp.png) | ![](assets/images/screenshots/reset_via_email.png) | ![](assets/images/screenshots/reset_via_phone.png) | ![](assets/images/screenshots/enter_verification_code.png) |
 
