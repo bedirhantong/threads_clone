@@ -25,7 +25,10 @@ class _SignupState extends State<Signup> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 const FormHeaderWidget(
-                    image: metaPng, subtitle: signupSubtitle),
+                  image: metaPng,
+                  subtitle: signupSubtitle,
+                  imageHeight: 0.3,
+                ),
                 const SizedBox(
                   height: 5.0,
                 ),

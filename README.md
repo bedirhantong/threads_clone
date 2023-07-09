@@ -57,8 +57,8 @@ This simple conference app allows:
 |:----------------------------------------:|:-----------------------------------------:|:----------------------------------------:|:-------------------------------------------------:|
 | ![](assets/images/screenshots/first.png) | ![](assets/images/screenshots/second.png) | ![](assets/images/screenshots/third.png) | ![](assets/images/screenshots/fourth_welcome.png) |
 
-|                      Login                      |                  Forgot                   |                   OTP                    |                      Signup                      |
-|:-----------------------------------------------:|:-----------------------------------------:|:----------------------------------------:|:------------------------------------------------:|
-| ![](assets/images/screenshots/login_screen.png) | ![](assets/images/screenshots/second.png) | ![](assets/images/screenshots/third.png) | ![](assets/images/screenshots/signup_screen.png) |
+|                      Login                      |                  Forgot                   |                  OTP                   |                      Signup                      |
+|:-----------------------------------------------:|:-----------------------------------------:|:--------------------------------------:|:------------------------------------------------:|
+| ![](assets/images/screenshots/login_screen.png) | ![](assets/images/screenshots/second.png) | ![](assets/images/screenshots/otp.png) | ![](assets/images/screenshots/signup_screen.png) |
 
 

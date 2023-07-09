@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../constants/sizes.dart';
@@ -33,10 +32,12 @@ class ForgotPasswordScreen {
               title: "E-mail",
               subtitle: resetViaEmail,
               onTap: () {
+                Navigator.pop(context); //bottom sheetten öncekine döneriz
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => ForgotPasswordMailScreen()));
+                        builder: (context) =>
+                            const ForgotPasswordMailScreen()));
               },
             ),
             const SizedBox(
@@ -47,6 +48,7 @@ class ForgotPasswordScreen {
               title: "Phone",
               subtitle: resetViaPhone,
               onTap: () {
+                Navigator.pop(context); //bottom sheetten öncekine döneriz
                 Navigator.push(
                     context,
                     MaterialPageRoute(
