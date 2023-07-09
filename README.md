@@ -35,9 +35,11 @@ If you would like to contribute to this project, please follow the steps below:
 
 - MVVM
 - Google Fonts
-- Flutter Native Splash
-- Liquid Swipe
-- Smooth Page Indicator
+- Pub.dev packages
+  - Flutter Native Splash
+  - Liquid Swipe
+  - Smooth Page Indicator
+  - Flutter Otp Text Field
 
 
 ## Getting Started
