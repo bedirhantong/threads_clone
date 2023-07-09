@@ -1,13 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:threads_clone/src/constants/sizes.dart';
-import 'package:threads_clone/src/constants/text_strings.dart';
-import '../forget_password/forget_password_options/forgot_password_btn_widget.dart';
 import '../forget_password/forget_password_options/forgot_password_model_bottom_sheet.dart';
 
-class LoginForm extends StatelessWidget {
-  const LoginForm({
-    super.key,
-  });
+class LoginForm extends StatefulWidget {
+  const LoginForm({Key? key}) : super(key: key);
+
+  @override
+  State<LoginForm> createState() => _LoginFormState();
+}
+
+class _LoginFormState extends State<LoginForm> {
+  bool _isPasswordVisible = false;
+
+  Widget _buildSuffixIcon() {
+    return IconButton(
+      onPressed: () {
+        setState(() {
+          _isPasswordVisible = !_isPasswordVisible;
+        });
+      },
+      icon: _isPasswordVisible
+          ? Icon(Icons.visibility)
+          : Icon(Icons.visibility_off),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,15 +44,13 @@ class LoginForm extends StatelessWidget {
               height: 20,
             ),
             TextFormField(
-              decoration: const InputDecoration(
+              obscureText: !_isPasswordVisible,
+              decoration: InputDecoration(
                 prefixIcon: Icon(Icons.fingerprint),
                 labelText: "Password",
                 hintText: "Password",
                 border: OutlineInputBorder(),
-                suffixIcon: IconButton(
-                  onPressed: null,
-                  icon: Icon(Icons.remove_red_eye_sharp),
-                ),
+                suffixIcon: _buildSuffixIcon(),
               ),
             ),
             const SizedBox(
@@ -61,7 +74,7 @@ class LoginForm extends StatelessWidget {
                   style: TextStyle(color: Colors.black),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
