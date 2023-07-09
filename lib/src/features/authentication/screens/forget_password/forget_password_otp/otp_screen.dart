@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
-import 'package:threads_clone/src/constants/sizes.dart';
 import 'package:threads_clone/src/constants/text_strings.dart';
 import 'package:threads_clone/src/features/authentication/screens/main_screen/login_sceen.dart';
 
@@ -12,7 +11,8 @@ class OTPScreen extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          padding: const EdgeInsets.all(defaultSize * 2),
+          padding:
+              const EdgeInsets.symmetric(horizontal: 50.0, vertical: 120.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
