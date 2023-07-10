@@ -64,6 +64,8 @@ This app allows:
 - [ ] Follow your friends
 - [ ] Repost others posts
 - [ ] Dark and Light Theme
+- [ ] Using Getx package for navigation with animation
+- [ ] Responsive splash screen
 
 ## Screenshots
 
