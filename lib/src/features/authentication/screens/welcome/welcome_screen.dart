@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:threads_clone/src/features/authentication/screens/signup/signup_screen.dart';
 
-import '../main_screen/login_sceen.dart';
+import '../login_screen/login_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});

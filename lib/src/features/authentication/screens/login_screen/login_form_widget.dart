@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../forget_password/forget_password_options/forgot_password_model_bottom_sheet.dart';
+import '../../models/forgot_password_model_bottom_sheet.dart';
+import '../main_screen/main_screen.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({Key? key}) : super(key: key);
@@ -19,8 +20,8 @@ class _LoginFormState extends State<LoginForm> {
         });
       },
       icon: _isPasswordVisible
-          ? Icon(Icons.visibility)
-          : Icon(Icons.visibility_off),
+          ? const Icon(Icons.visibility)
+          : const Icon(Icons.visibility_off),
     );
   }
 
@@ -68,7 +69,15 @@ class _LoginFormState extends State<LoginForm> {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => MainScreen(),
+                    ),
+                  );
+                },
                 child: Text(
                   'Login'.toUpperCase(),
                   style: TextStyle(color: Colors.black),

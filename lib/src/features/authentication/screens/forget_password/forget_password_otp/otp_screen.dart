@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:threads_clone/src/constants/text_strings.dart';
-import 'package:threads_clone/src/features/authentication/screens/main_screen/login_sceen.dart';
+import 'package:threads_clone/src/features/authentication/screens/login_screen/login_screen.dart';
 
 class OTPScreen extends StatelessWidget {
   const OTPScreen({super.key});
