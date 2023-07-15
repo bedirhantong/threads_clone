@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../main_screen/main_screen.dart';
-import '../notifications_screen/notifications_screen.dart';
-import '../profile_screen/profile_screen.dart';
-import '../search_screen/search_screen.dart';
-
 class PostScreen extends StatefulWidget {
   const PostScreen({super.key});
 
@@ -15,11 +10,29 @@ class PostScreen extends StatefulWidget {
 class _PostScreenState extends State<PostScreen> {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Center(
-          child: Text('Post Screen'),
+        appBar: AppBar(
+          leading: const Icon(Icons.close),
+          backgroundColor: Colors.black,
+          title: const Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              'New Thread',
+              style: TextStyle(fontSize: 20.0),
+            ),
+          ),
+          centerTitle: true,
+        ),
+        body: Container(
+          padding: const EdgeInsets.all(10.0),
+          color: Colors.black,
+          child: Column(
+            children: [
+              Container(),
+            ],
+          ),
         ),
       ),
     );

@@ -70,7 +70,7 @@ class _LoginFormState extends State<LoginForm> {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.pop(context);
+                  // Navigator.popUntil(context, (route) => ); Main screen e kadar
                   Navigator.push(
                     context,
                     MaterialPageRoute(

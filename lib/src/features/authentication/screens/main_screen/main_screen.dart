@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:threads_clone/src/features/authentication/screens/main_screen/home_screen.dart';
 import 'package:threads_clone/src/features/authentication/screens/notifications_screen/notifications_screen.dart';
 
 import '../post_screen/post_screen.dart';
@@ -15,14 +16,8 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
 
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-
   static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Home',
-      style: optionStyle,
-    ),
+    HomeScreen(),
     SearchScreen(),
     PostScreen(),
     NotificationsScreen(),
@@ -35,15 +30,6 @@ class _MainScreenState extends State<MainScreen> {
       debugShowCheckedModeBanner: false,
       title: 'Material App',
       home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.black,
-          title: Image.asset(
-            'assets/images/threads.png',
-            width: 50,
-            height: 50,
-          ),
-          centerTitle: true,
-        ),
         body: Container(
           child: _widgetOptions.elementAt(_selectedIndex),
         ),

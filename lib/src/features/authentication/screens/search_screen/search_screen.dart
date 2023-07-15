@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../main_screen/main_screen.dart';
-import '../notifications_screen/notifications_screen.dart';
-import '../post_screen/post_screen.dart';
-import '../profile_screen/profile_screen.dart';
-
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
 
@@ -15,12 +10,35 @@ class SearchScreen extends StatefulWidget {
 class _SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Material App',
       home: Scaffold(
-        body: Center(
-          child: Text('Search Screen'),
+        appBar: AppBar(
+          backgroundColor: Colors.black,
+          title: const Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              'Search',
+              style: TextStyle(fontSize: 20.0),
+            ),
+          ),
+          centerTitle: true,
+        ),
+        body: Container(
+          padding: const EdgeInsets.all(10.0),
+          color: Colors.black,
+          child: Column(
+            children: [
+              Container(
+                child: SearchBar(
+                  leading: Icon(Icons.search),
+                  hintText: 'Search',
+                  backgroundColor: MaterialStateProperty.all(Colors.grey),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

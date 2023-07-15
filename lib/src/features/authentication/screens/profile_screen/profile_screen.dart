@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../main_screen/main_screen.dart';
-import '../notifications_screen/notifications_screen.dart';
-import '../post_screen/post_screen.dart';
-import '../search_screen/search_screen.dart';
-
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
 
@@ -15,12 +10,27 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Material App',
       home: Scaffold(
-        body: Center(
-          child: Text('Profile Screen'),
+        appBar: AppBar(
+          leading: Icon(Icons.lock),
+          backgroundColor: Colors.black,
+          title: const Align(
+            alignment: Alignment.centerRight,
+            child: Icon(Icons.settings_outlined),
+          ),
+          centerTitle: true,
+        ),
+        body: Container(
+          padding: const EdgeInsets.all(10.0),
+          color: Colors.black,
+          child: Column(
+            children: [
+              Container(),
+            ],
+          ),
         ),
       ),
     );

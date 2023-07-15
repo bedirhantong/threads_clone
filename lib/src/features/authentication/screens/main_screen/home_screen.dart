@@ -1,9 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:threads_clone/src/features/authentication/screens/notifications_screen/notifications_screen.dart';
-
-import '../post_screen/post_screen.dart';
-import '../profile_screen/profile_screen.dart';
-import '../search_screen/search_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -17,8 +12,18 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      title: 'Material App',
       home: Scaffold(
-        body: Container(
+        appBar: AppBar(
+          backgroundColor: Colors.black,
+          title: Image.asset(
+            'assets/images/threads.png',
+            width: 50,
+            height: 50,
+          ),
+          centerTitle: true,
+        ),
+        body: const Center(
           child: Text('Home Screen'),
         ),
       ),
