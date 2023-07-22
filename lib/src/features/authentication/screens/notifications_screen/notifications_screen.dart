@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class NotificationsScreen extends StatefulWidget {
-  const NotificationsScreen({Key? key});
+  const NotificationsScreen({super.key});
 
   @override
   _NotificationsScreenState createState() => _NotificationsScreenState();
@@ -56,7 +56,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                   children: [
                     OutlinedButton(
                       style: OutlinedButton.styleFrom(
-                        fixedSize: const Size(120.0, 0),
+                        fixedSize: const Size(110.0, 0),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8.0),
                         ),
@@ -78,7 +78,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                     ),
                     OutlinedButton(
                       style: OutlinedButton.styleFrom(
-                        fixedSize: const Size(120.0, 0),
+                        fixedSize: const Size(110.0, 0),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8.0),
                         ),
@@ -100,7 +100,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                     ),
                     OutlinedButton(
                       style: OutlinedButton.styleFrom(
-                        fixedSize: const Size(120.0, 0),
+                        fixedSize: const Size(110.0, 0),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8.0),
                         ),
@@ -122,7 +122,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                     ),
                     OutlinedButton(
                       style: OutlinedButton.styleFrom(
-                        fixedSize: const Size(120.0, 0),
+                        fixedSize: const Size(110.0, 0),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8.0),
                         ),
@@ -145,7 +145,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                   ],
                 ),
               ),
-              Column(
+              const Column(
                 children: [],
               ),
             ],
@@ -153,6 +153,12 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
         ),
       ),
     );
+  }
+
+  @override
+  void initState() {
+    changeButtonAppearance(0); // Select the "All" button initially
+    super.initState();
   }
 
   void changeButtonAppearance(int index) {

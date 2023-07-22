@@ -30,12 +30,10 @@ class _SearchScreenState extends State<SearchScreen> {
           color: Colors.black,
           child: Column(
             children: [
-              Container(
-                child: SearchBar(
-                  leading: Icon(Icons.search),
-                  hintText: 'Search',
-                  backgroundColor: MaterialStateProperty.all(Colors.grey),
-                ),
+              SearchBar(
+                leading: const Icon(Icons.search),
+                hintText: 'Search',
+                backgroundColor: MaterialStateProperty.all(Colors.grey),
               ),
             ],
           ),

@@ -15,7 +15,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       title: 'Material App',
       home: Scaffold(
         appBar: AppBar(
-          leading: Icon(Icons.lock),
+          leading: const Icon(Icons.lock),
           backgroundColor: Colors.black,
           title: const Align(
             alignment: Alignment.centerRight,

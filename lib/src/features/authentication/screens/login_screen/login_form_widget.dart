@@ -47,10 +47,10 @@ class _LoginFormState extends State<LoginForm> {
             TextFormField(
               obscureText: !_isPasswordVisible,
               decoration: InputDecoration(
-                prefixIcon: Icon(Icons.fingerprint),
+                prefixIcon: const Icon(Icons.fingerprint),
                 labelText: "Password",
                 hintText: "Password",
-                border: OutlineInputBorder(),
+                border: const OutlineInputBorder(),
                 suffixIcon: _buildSuffixIcon(),
               ),
             ),
@@ -74,13 +74,13 @@ class _LoginFormState extends State<LoginForm> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => MainScreen(),
+                      builder: (context) => const MainScreen(),
                     ),
                   );
                 },
                 child: Text(
                   'Login'.toUpperCase(),
-                  style: TextStyle(color: Colors.black),
+                  style: const TextStyle(color: Colors.black),
                 ),
               ),
             ),

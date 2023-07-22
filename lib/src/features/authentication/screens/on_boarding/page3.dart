@@ -24,7 +24,7 @@ class _Page3State extends State<Page3> {
         // backgroundColor: Colors.black,
       ),
       body: Padding(
-        padding: EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -45,7 +45,7 @@ class _Page3State extends State<Page3> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => WelcomeScreen(),
+                    builder: (context) => const WelcomeScreen(),
                   ),
                 );
               },

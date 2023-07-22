@@ -23,7 +23,7 @@ class _Page2State extends State<Page2> {
         // backgroundColor: Colors.black,
       ),
       body: Padding(
-        padding: EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -44,7 +44,7 @@ class _Page2State extends State<Page2> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => Page3(),
+                    builder: (context) => const Page3(),
                   ),
                 );
               },

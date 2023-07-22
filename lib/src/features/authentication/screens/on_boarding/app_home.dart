@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:threads_clone/src/features/authentication/screens/on_boarding/page2.dart';
-import 'package:threads_clone/src/utils/theme/theme.dart';
 
 class AppHome extends StatefulWidget {
   const AppHome({super.key});
@@ -11,6 +11,12 @@ class AppHome extends StatefulWidget {
 }
 
 class _AppHomeState extends State<AppHome> {
+  @override
+  void initState() {
+    FlutterNativeSplash.remove();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +30,7 @@ class _AppHomeState extends State<AppHome> {
         // backgroundColor: Colors.black,
       ),
       body: Padding(
-        padding: EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -46,7 +52,7 @@ class _AppHomeState extends State<AppHome> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => Page2(),
+                    builder: (context) => const Page2(),
                   ),
                 );
               },

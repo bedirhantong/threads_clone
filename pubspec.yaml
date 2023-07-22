@@ -26,16 +26,16 @@ dependencies:
 # https://pub.dev/packages/flutter_native_splash
 flutter_native_splash:
   color: "#ffffff"
-  image: assets/images/threads.png
+  image: assets/images/logo/threads_logo.png
   branding: assets/images/meta.png
   color_dark: "#121212"
-  image_dark: assets/images/threads.png
+  image_dark: assets/images/logo/threads_logo.png
   branding_dark: assets/images/meta.png
 
   android_12:
-    image: assets/images/threads.png
+    image: assets/images/logo/threads_logo.png
     icon_background_color: "#ffffff"
-    image_dark: assets/images/threads.png
+    image_dark: assets/images/logo/threads_logo.png
     icon_background_color_dark: "#121212"
 
   web: false
@@ -59,3 +59,4 @@ flutter:
     - assets/images/signup/
     - assets/images/screenshots/
     - assets/images/forget_password/
+    - assets/icons/

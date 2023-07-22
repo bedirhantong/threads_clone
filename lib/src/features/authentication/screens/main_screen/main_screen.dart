@@ -63,7 +63,7 @@ class _MainScreenState extends State<MainScreen> {
           backgroundColor: Colors.black,
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.heart_broken_outlined),
+          icon: Icon(Icons.favorite_border),
           label: 'Notifications',
           backgroundColor: Colors.black,
         ),

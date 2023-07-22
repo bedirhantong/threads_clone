@@ -52,7 +52,8 @@ class ForgotPasswordScreen {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => ForgotPasswordPhoneScreen()));
+                        builder: (context) =>
+                            const ForgotPasswordPhoneScreen()));
               },
             ),
           ],

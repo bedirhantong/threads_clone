@@ -47,7 +47,7 @@ class _SignupState extends State<Signup> {
                             image: AssetImage('assets/images/logo/google.png'),
                             width: 20.0,
                           ),
-                          label: Text('Sign-Up with Google'),
+                          label: const Text('Sign-Up with Google'),
                         ),
                       ),
                       TextButton(
@@ -55,7 +55,7 @@ class _SignupState extends State<Signup> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => LoginScreen()));
+                                  builder: (context) => const LoginScreen()));
                         },
                         child: Text.rich(
                           TextSpan(

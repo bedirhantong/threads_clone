@@ -69,13 +69,20 @@ This app allows:
 
 ## Screenshots
 
+- Onboarding Screen
+
 |                  0000                   |                  0001                   |                  0010                   |                      0011                      |
 |:----------------------------------------:|:-----------------------------------------:|:----------------------------------------:|:-------------------------------------------------:|
 | ![](assets/images/screenshots/first.png) | ![](assets/images/screenshots/second.png) | ![](assets/images/screenshots/third.png) | ![](assets/images/screenshots/fourth_welcome.png) |
 
+
+- Login and Signup Alternative and Official
+
 |                      0100                      |                  0101                   |                  0111                   |                      1000                      |
 |:-----------------------------------------------:|:-----------------------------------------:|:--------------------------------------:|:------------------------------------------------:|
-| ![](assets/images/screenshots/login_screen.png) | ![](assets/images/screenshots/second.png) | ![](assets/images/screenshots/otp.png) | ![](assets/images/screenshots/signup_screen.png) |
+| ![](assets/images/screenshots/login_screen.png) | ![](assets/images/screenshots/official_login.png) | ![](assets/images/screenshots/otp.png) | ![](assets/images/screenshots/signup_screen.png) |
+
+- OTP Screen for Alternative Login Page
 
 |                      1001                      |                  1010                   |                  1011                   |                      1100                      |
 |:-----------------------------------------------:|:-----------------------------------------:|:--------------------------------------:|:------------------------------------------------:|

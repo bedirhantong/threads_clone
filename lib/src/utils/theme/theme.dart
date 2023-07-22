@@ -14,7 +14,7 @@ class ThreadsAppTheme {
     appBarTheme: const AppBarTheme(
       color: Colors.white,
     ),
-    elevatedButtonTheme: ElevatedButtonThemeData(),
+    elevatedButtonTheme: const ElevatedButtonThemeData(),
     inputDecorationTheme: TextFormFieldTheme.lightInputDecorationTheme,
   );
 
@@ -25,6 +25,6 @@ class ThreadsAppTheme {
       color: Colors.black,
     ),
     inputDecorationTheme: TextFormFieldTheme.darkInputDecorationTheme,
-    elevatedButtonTheme: ElevatedButtonThemeData(),
+    elevatedButtonTheme: const ElevatedButtonThemeData(),
   );
 }

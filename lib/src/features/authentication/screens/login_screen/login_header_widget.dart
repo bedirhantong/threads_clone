@@ -13,7 +13,7 @@ class LoginHeaderWidget extends StatelessWidget {
     return Column(
       children: [
         Image(
-          image: AssetImage(
+          image: const AssetImage(
             'assets/images/on_boarding_images/page1.png',
           ),
           height: size.height * 0.3,
