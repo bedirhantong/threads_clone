@@ -48,27 +48,27 @@ class _MainScreenState extends State<MainScreen> {
     return BottomNavigationBar(
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
-          icon: Icon(Icons.home_filled),
+          icon: ImageIcon(AssetImage('assets/icons/home.png')),
           label: 'Home',
           backgroundColor: Colors.black,
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.search),
+          icon: ImageIcon(AssetImage('assets/icons/search.png')),
           label: 'Search',
           backgroundColor: Colors.black,
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.ios_share_outlined),
+          icon: ImageIcon(AssetImage('assets/icons/post.png')),
           label: 'Post',
           backgroundColor: Colors.black,
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.favorite_border),
+          icon: ImageIcon(AssetImage('assets/icons/like.png')),
           label: 'Notifications',
           backgroundColor: Colors.black,
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.person_2_rounded),
+          icon: ImageIcon(AssetImage('assets/icons/profile.png')),
           label: 'Profile',
           backgroundColor: Colors.black,
         ),

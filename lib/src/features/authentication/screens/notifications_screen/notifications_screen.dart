@@ -145,7 +145,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                   ],
                 ),
               ),
-              const Column(
+              Column(
                 children: [],
               ),
             ],
