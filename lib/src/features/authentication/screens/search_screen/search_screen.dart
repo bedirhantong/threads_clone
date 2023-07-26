@@ -45,7 +45,7 @@ class _SearchScreenState extends State<SearchScreen> {
                         showSearch(
                           context: context,
                           // delegate to customize the search bar
-                          delegate: CustomSearchDelegate(),
+                          delegate: CustomSearchDelegateWithDummyData(),
                         );
                       },
                       icon: const Icon(
@@ -77,7 +77,7 @@ class _SearchScreenState extends State<SearchScreen> {
             showSearch(
                 context: context,
                 // delegate to customize the search bar
-                delegate: CustomSearchDelegate());
+                delegate: CustomSearchDelegateWithDummyData());
           },
           icon: const Icon(
             Icons.search,
@@ -89,7 +89,7 @@ class _SearchScreenState extends State<SearchScreen> {
   }
 }
 
-class CustomSearchDelegate extends SearchDelegate {
+class CustomSearchDelegateWithDummyData extends SearchDelegate {
 // Demo list to show querying
   List<String> searchTerms = [
     "bedirhantng",

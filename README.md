@@ -88,3 +88,9 @@ This app allows:
 |:-----------------------------------------------:|:-----------------------------------------:|:--------------------------------------:|:------------------------------------------------:|
 | ![](assets/images/screenshots/otp.png) | ![](assets/images/screenshots/reset_via_email.png) | ![](assets/images/screenshots/reset_via_phone.png) | ![](assets/images/screenshots/enter_verification_code.png) |
 
+
+- In App Pages
+
+|                      1001                      |                  1010                   |                  1011                   |                      1100                      |
+|:-----------------------------------------------:|:-----------------------------------------:|:--------------------------------------:|:------------------------------------------------:|
+| ![](assets/images/screenshots/home_screen.png) | ![](assets/images/screenshots/profile_replies.png) | ![](assets/images/screenshots/profile_threads.png) | ![](assets/images/screenshots/search_page.png) |
