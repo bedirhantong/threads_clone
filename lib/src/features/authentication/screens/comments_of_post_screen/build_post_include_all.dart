@@ -169,12 +169,12 @@ class BuildPostWithEverything extends StatelessWidget {
                     ? Row(
                         children: [
                           Text(
-                            '40 comments $likeNum likes',
+                            '40 comments · $likeNum likes',
                             style: const TextStyle(color: Colors.white54),
                           )
                         ],
                       )
-                    : Text(''),
+                    : Text('$likeNum likes'),
               ],
             ),
           ),
