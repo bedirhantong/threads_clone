@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:like_button/like_button.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -38,6 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   'How you doin\'?',
                   '6 hours ago',
                   calculateHeight('ya xude'),
+                  23,
                 ),
                 const SizedBox(
                   height: 10.0,
@@ -49,6 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   'They don\'t know that we know they know we know.',
                   '2 days ago',
                   calculateHeight('selam bebek'),
+                  43,
                 ),
                 const SizedBox(
                   height: 10.0,
@@ -60,6 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   'PIVOT!',
                   '2 hours ago',
                   calculateHeight('2 hours ago'),
+                  564,
                 ),
                 const SizedBox(
                   height: 10.0,
@@ -71,6 +75,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   'Smelly Cat, Smelly Cat, what are they feeding you?',
                   '3 hours ago',
                   calculateHeight('3 minutes ago'),
+                  23,
                 ),
                 const SizedBox(
                   height: 10.0,
@@ -82,6 +87,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   'Could I be wearing any more clothes?',
                   '3 minutes ago',
                   calculateHeight('3 minutes ago'),
+                  435,
                 ),
                 const SizedBox(
                   height: 10.0,
@@ -93,6 +99,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   'Welcome to the real world. It sucks! You\'re gonna love it.',
                   '13 hours ago',
                   calculateHeight('13 hours ago'),
+                  252,
                 ),
                 const SizedBox(
                   height: 10.0,
@@ -104,18 +111,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   'We were on a break!',
                   '33 minutes ago',
                   calculateHeight('hiiiiiiii'),
-                ),
-                const SizedBox(
-                  height: 10.0,
-                ),
-                buildPost(
-                  'musa',
-                  'alatasms',
-                  'serhan',
-                  'I\'m not so good with the advice. Can I interest you in a sarcastic comment?',
-                  '5 days ago',
-                  calculateHeight(
-                      'C# da bu haftaki gelişmeler : bedirhan aaki gelişmeler : bedirhan abim C# basic syntax ve linQ öaki gelişmeler : bedirhan abim C# basic syntax ve linQ öaki gelişmeler : bedirhan abim C# basic syntax ve linQ öaki gelişmeler : bedirhan abim C# basic syntax ve linQ öbim C# basic syntax ve linQ öğrendi.'),
+                  454,
                 ),
                 const SizedBox(
                   height: 10.0,
@@ -127,6 +123,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   'I know!',
                   'last year',
                   calculateHeight('last year'),
+                  324,
                 ),
                 const SizedBox(
                   height: 10.0,
@@ -153,6 +150,7 @@ class _HomeScreenState extends State<HomeScreen> {
     String whatIsPosted,
     String whenPosted,
     double height,
+    int likeNum,
   ) {
     return Card(
       borderOnForeground: true,
@@ -179,6 +177,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: height,
                   color: Colors.grey,
                 ),
+              ),
+              CircleAvatar(
+                backgroundColor: Colors.transparent,
+                backgroundImage: AssetImage(
+                    'assets/images/temp_user_images/$whoCommented.jpg'),
+                radius: 10.0,
               ),
             ],
           ),
@@ -233,22 +237,38 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 const SizedBox(height: 10),
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    ImageIcon(
-                      AssetImage('assets/icons/like_post.png'),
-                      color: Colors.white,
+                    LikeButton(
+                      size: 30.0,
+                      circleColor: const CircleColor(
+                        start: Color(0xffff1717),
+                        end: Color(0xffd00000),
+                      ),
+                      bubblesColor: const BubblesColor(
+                        dotPrimaryColor: Color(0xff9b9b9b),
+                        dotSecondaryColor: Color(0xffffffff),
+                      ),
+                      likeBuilder: (bool isLiked) {
+                        return Icon(
+                          isLiked ? Icons.favorite : Icons.favorite_border,
+                          color: isLiked ? Colors.red : Colors.white,
+                          size: 25.0,
+                        );
+                      },
+                      likeCount: likeNum,
+                      // TODO: yorumlardaki like sayısı değişmiyor
                     ),
-                    ImageIcon(
+                    const ImageIcon(
                       AssetImage('assets/icons/comment.png'),
                       color: Colors.white,
                     ),
-                    ImageIcon(
+                    const ImageIcon(
                       AssetImage('assets/icons/repost.png'),
                       color: Colors.white,
                     ),
-                    ImageIcon(
+                    const ImageIcon(
                       AssetImage('assets/icons/direct.png'),
                       color: Colors.white,
                     ),
@@ -256,12 +276,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 Row(
                   children: [
-                    CircleAvatar(
-                      backgroundColor: Colors.transparent,
-                      backgroundImage: AssetImage(
-                          'assets/images/temp_user_images/$whoCommented.jpg'),
-                      radius: 10.0,
-                    ),
+                    Text(
+                      '40 comments $likeNum likes',
+                      style: const TextStyle(color: Colors.white54),
+                    )
                   ],
                 ),
               ],
