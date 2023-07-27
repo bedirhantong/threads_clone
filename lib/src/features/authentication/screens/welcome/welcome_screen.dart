@@ -49,62 +49,18 @@ class WelcomeScreen extends StatelessWidget {
                   );
                 },
                 style: OutlinedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(2.0))),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(2.0),
+                  ),
+                ),
                 child: Text(
                   'Login',
-                  style: GoogleFonts.robotoMono(),
+                  style: GoogleFonts.robotoMono(color: Colors.white),
                   textAlign: TextAlign.center,
                 ),
               ),
             ),
           ),
-          // Row(
-          //   mainAxisAlignment: MainAxisAlignment.center,
-          //   children: [
-          //     OutlinedButton(
-          //       onPressed: () {
-          //         Navigator.push(
-          //           context,
-          //           MaterialPageRoute(
-          //             builder: (context) => const OfficialLoginPage(),
-          //           ),
-          //         );
-          //       },
-          //       style: OutlinedButton.styleFrom(
-          //           shape: RoundedRectangleBorder(
-          //               borderRadius: BorderRadius.circular(2.0))),
-          //       child: Text(
-          //         'Login',
-          //         style: GoogleFonts.robotoMono(),
-          //         textAlign: TextAlign.center,
-          //       ),
-          //     ),
-          //     const SizedBox(
-          //       width: 30,
-          //     ),
-          //     OutlinedButton(
-          //       onPressed: () {
-          //         Navigator.push(
-          //           context,
-          //           MaterialPageRoute(
-          //             builder: (context) => const Signup(),
-          //           ),
-          //         );
-          //       },
-          //       style: OutlinedButton.styleFrom(
-          //         shape: RoundedRectangleBorder(
-          //           borderRadius: BorderRadius.circular(2.0),
-          //         ),
-          //       ),
-          //       child: Text(
-          //         'Signup',
-          //         style: GoogleFonts.robotoMono(),
-          //         textAlign: TextAlign.center,
-          //       ),
-          //     ),
-          //   ],
-          // ),
         ],
       ),
     );

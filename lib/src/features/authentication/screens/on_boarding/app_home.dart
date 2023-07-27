@@ -58,7 +58,7 @@ class _AppHomeState extends State<AppHome> {
               },
               child: Text(
                 'Let\'s get started',
-                style: GoogleFonts.robotoMono(),
+                style: GoogleFonts.robotoMono(color: Colors.white),
               ),
             ),
           ],

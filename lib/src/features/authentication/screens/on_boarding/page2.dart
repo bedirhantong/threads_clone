@@ -50,7 +50,7 @@ class _Page2State extends State<Page2> {
               },
               child: Text(
                 'Next',
-                style: GoogleFonts.robotoMono(),
+                style: GoogleFonts.robotoMono(color: Colors.white),
               ),
             ),
           ],

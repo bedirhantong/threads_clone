@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../comments_of_post_screen/build_post_include_all.dart';
+
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
 
@@ -313,102 +315,105 @@ class _ThreadsPostedState extends State<ThreadsPosted> {
         child: Column(
           children: [
             // A post
-            buildPost(
-              'me',
-              'bdotng',
-              'musa',
-              'How you doin\'?',
-              '6 hours ago',
-              calculateHeight('ya xude'),
-            ),
+            BuildPostWithEverything(
+                whoPosted: 'me',
+                username: 'bdotng',
+                whoCommented: 'musa',
+                whatIsPosted: 'How you doin\'?',
+                whenPosted: '6 hours ago',
+                height: calculateHeight('ya xude'),
+                likeNum: 23),
             const SizedBox(
               height: 10.0,
             ),
-            buildPost(
-              'serhan',
-              'srhnbymz',
-              'me',
-              'They don\'t know that we know they know we know.',
-              '2 days ago',
-              calculateHeight('selam bebek'),
-            ),
+            BuildPostWithEverything(
+                whoPosted: 'serhan',
+                username: 'srhnbymz',
+                whoCommented: 'me',
+                whatIsPosted:
+                    'They don\'t know that we know they know we know.',
+                whenPosted: '2 days ago',
+                height: calculateHeight('selam bebek'),
+                likeNum: 43),
             const SizedBox(
               height: 10.0,
             ),
-            buildPost(
-              'musa',
-              'alatasms',
-              'me',
-              'PIVOT!',
-              '2 hours ago',
-              calculateHeight('2 hours ago'),
-            ),
+            BuildPostWithEverything(
+                whoPosted: 'musa',
+                username: 'alatasms',
+                whoCommented: 'me',
+                whatIsPosted: 'PIVOT!',
+                whenPosted: '2 hours ago',
+                height: calculateHeight('2 hours ago'),
+                likeNum: 564),
             const SizedBox(
               height: 10.0,
             ),
-            buildPost(
-              'sinan',
-              'demir_exe',
-              'serhan',
-              'Smelly Cat, Smelly Cat, what are they feeding you?',
-              '3 hours ago',
-              calculateHeight('3 minutes ago'),
-            ),
+            BuildPostWithEverything(
+                whoPosted: 'sinan',
+                username: 'demir_exe',
+                whoCommented: 'serhan',
+                whatIsPosted:
+                    'Smelly Cat, Smelly Cat, what are they feeding you?',
+                whenPosted: '3 hours ago',
+                height: calculateHeight('3 minutes ago'),
+                likeNum: 23),
             const SizedBox(
               height: 10.0,
             ),
-            buildPost(
-              'yusuf',
-              'yuciferr',
-              'musa',
-              'Could I be wearing any more clothes?',
-              '3 minutes ago',
-              calculateHeight('3 minutes ago'),
-            ),
+            BuildPostWithEverything(
+                whoPosted: 'yusuf',
+                username: 'yuciferr',
+                whoCommented: 'musa',
+                whatIsPosted: 'Could I be wearing any more clothes?',
+                whenPosted: '3 minutes ago',
+                height: calculateHeight('3 minutes ago'),
+                likeNum: 435),
             const SizedBox(
               height: 10.0,
             ),
-            buildPost(
-              'onur',
-              '10urcetin',
-              'serhan',
-              'Welcome to the real world. It sucks! You\'re gonna love it.',
-              '13 hours ago',
-              calculateHeight('13 hours ago'),
-            ),
+            BuildPostWithEverything(
+                whoPosted: 'onur',
+                username: '10urcetin',
+                whoCommented: 'serhan',
+                whatIsPosted:
+                    'Welcome to the real world. It sucks! You\'re gonna love it.',
+                whenPosted: '13 hours ago',
+                height: calculateHeight('13 hours ago'),
+                likeNum: 252),
             const SizedBox(
               height: 10.0,
             ),
-            buildPost(
-              'ibrahim',
-              'dumanibrahim',
-              'musa',
-              'We were on a break!',
-              '33 minutes ago',
-              calculateHeight('hiiiiiiii'),
-            ),
+            BuildPostWithEverything(
+                whoPosted: 'ibrahim',
+                username: 'dumanibrahim',
+                whoCommented: 'musa',
+                whatIsPosted: 'We were on a break!',
+                whenPosted: '33 minutes ago',
+                height: calculateHeight('hiiiiiiii'),
+                likeNum: 454),
             const SizedBox(
               height: 10.0,
             ),
-            buildPost(
-              'musa',
-              'alatasms',
-              'serhan',
-              'I\'m not so good with the advice. Can I interest you in a sarcastic comment?',
-              '5 days ago',
-              calculateHeight(
-                  'C# da bu haftaki gelişmeler : bedirhan aaki gelişmeler : bedirhan abim C# basic syntax ve linQ öaki gelişmeler : bedirhan abim C# basic syntax ve linQ öaki gelişmeler : bedirhan abim C# basic syntax ve linQ öaki gelişmeler : bedirhan abim C# basic syntax ve linQ öbim C# basic syntax ve linQ öğrendi.'),
-            ),
-            const SizedBox(
-              height: 10.0,
-            ),
-            buildPost(
-              'me',
-              'bdotng',
-              'sinan',
-              'I know!',
-              'last year',
-              calculateHeight('last year'),
+            BuildPostWithEverything(
+              whoPosted: 'me',
+              username: 'bdotng',
+              whoCommented: 'sinan',
+              whatIsPosted: 'I know!',
+              whenPosted: 'last year',
+              height: calculateHeight('last year'),
+              likeNum: 324,
+              commentsListWidget: [
+                BuildPostWithEverything(
+                  whoPosted: 'ibrahim',
+                  username: 'dumanibrahim',
+                  whatIsPosted: 'We were on a break!',
+                  whenPosted: '33 minutes ago',
+                  height: calculateHeight('hiiiiiiii'),
+                  likeNum: 454,
+                  whoCommented: '',
+                )
+              ],
             ),
             const SizedBox(
               height: 10.0,
@@ -570,47 +575,105 @@ class _RepliesPostedState extends State<RepliesPosted> {
         child: Column(
           children: [
             // A post
-            buildPost(
-              'serhan',
-              'srhnbymz',
-              'me',
-              'They don\'t know that we know they know we know.',
-              '2 days ago',
-              calculateHeight('selam bebek'),
-            ),
+            BuildPostWithEverything(
+                whoPosted: 'me',
+                username: 'bdotng',
+                whoCommented: 'musa',
+                whatIsPosted: 'How you doin\'?',
+                whenPosted: '6 hours ago',
+                height: calculateHeight('ya xude'),
+                likeNum: 23),
             const SizedBox(
               height: 10.0,
             ),
-            buildPost(
-              'musa',
-              'alatasms',
-              'me',
-              'PIVOT!',
-              '2 hours ago',
-              calculateHeight('2 hours ago'),
-            ),
+            BuildPostWithEverything(
+                whoPosted: 'serhan',
+                username: 'srhnbymz',
+                whoCommented: 'me',
+                whatIsPosted:
+                    'They don\'t know that we know they know we know.',
+                whenPosted: '2 days ago',
+                height: calculateHeight('selam bebek'),
+                likeNum: 43),
             const SizedBox(
               height: 10.0,
             ),
-            buildPost(
-              'musa',
-              'alatasms',
-              'serhan',
-              'I\'m not so good with the advice. Can I interest you in a sarcastic comment?',
-              '5 days ago',
-              calculateHeight(
-                  'C# da bu haftaki gelişmeler : bedirhan aaki gelişmeler : bedirhan abim C# basic syntax ve linQ öaki gelişmeler : bedirhan abim C# basic syntax ve linQ öaki gelişmeler : bedirhan abim C# basic syntax ve linQ öaki gelişmeler : bedirhan abim C# basic syntax ve linQ öbim C# basic syntax ve linQ öğrendi.'),
-            ),
+            BuildPostWithEverything(
+                whoPosted: 'musa',
+                username: 'alatasms',
+                whoCommented: 'me',
+                whatIsPosted: 'PIVOT!',
+                whenPosted: '2 hours ago',
+                height: calculateHeight('2 hours ago'),
+                likeNum: 564),
             const SizedBox(
               height: 10.0,
             ),
-            buildPost(
-              'me',
-              'bdotng',
-              'sinan',
-              'I know!',
-              'last year',
-              calculateHeight('last year'),
+            BuildPostWithEverything(
+                whoPosted: 'sinan',
+                username: 'demir_exe',
+                whoCommented: 'serhan',
+                whatIsPosted:
+                    'Smelly Cat, Smelly Cat, what are they feeding you?',
+                whenPosted: '3 hours ago',
+                height: calculateHeight('3 minutes ago'),
+                likeNum: 23),
+            const SizedBox(
+              height: 10.0,
+            ),
+            BuildPostWithEverything(
+                whoPosted: 'yusuf',
+                username: 'yuciferr',
+                whoCommented: 'musa',
+                whatIsPosted: 'Could I be wearing any more clothes?',
+                whenPosted: '3 minutes ago',
+                height: calculateHeight('3 minutes ago'),
+                likeNum: 435),
+            const SizedBox(
+              height: 10.0,
+            ),
+            BuildPostWithEverything(
+                whoPosted: 'onur',
+                username: '10urcetin',
+                whoCommented: 'serhan',
+                whatIsPosted:
+                    'Welcome to the real world. It sucks! You\'re gonna love it.',
+                whenPosted: '13 hours ago',
+                height: calculateHeight('13 hours ago'),
+                likeNum: 252),
+            const SizedBox(
+              height: 10.0,
+            ),
+            BuildPostWithEverything(
+                whoPosted: 'ibrahim',
+                username: 'dumanibrahim',
+                whoCommented: 'musa',
+                whatIsPosted: 'We were on a break!',
+                whenPosted: '33 minutes ago',
+                height: calculateHeight('hiiiiiiii'),
+                likeNum: 454),
+            const SizedBox(
+              height: 10.0,
+            ),
+            BuildPostWithEverything(
+              whoPosted: 'me',
+              username: 'bdotng',
+              whoCommented: 'sinan',
+              whatIsPosted: 'I know!',
+              whenPosted: 'last year',
+              height: calculateHeight('last year'),
+              likeNum: 324,
+              commentsListWidget: [
+                BuildPostWithEverything(
+                  whoPosted: 'ibrahim',
+                  username: 'dumanibrahim',
+                  whatIsPosted: 'We were on a break!',
+                  whenPosted: '33 minutes ago',
+                  height: calculateHeight('hiiiiiiii'),
+                  likeNum: 454,
+                  whoCommented: '',
+                )
+              ],
             ),
             const SizedBox(
               height: 10.0,

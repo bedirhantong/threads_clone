@@ -51,7 +51,7 @@ class _Page3State extends State<Page3> {
               },
               child: Text(
                 'Start',
-                style: GoogleFonts.robotoMono(),
+                style: GoogleFonts.robotoMono(color: Colors.white),
               ),
             ),
           ],
