@@ -71,9 +71,9 @@ This app allows:
 
 - Onboarding Screen
 
-|                  0000                   |                  0001                   |                  0010                   |                      0011                      |
-|:----------------------------------------:|:-----------------------------------------:|:----------------------------------------:|:-------------------------------------------------:|
-| ![](assets/images/screenshots/first.png) | ![](assets/images/screenshots/second.png) | ![](assets/images/screenshots/third.png) | ![](assets/images/screenshots/fourth_welcome.png) |
+|                   0000                    |                   0001                   |                  0010                   |                      0011                      |
+|:-----------------------------------------:|:----------------------------------------:|:----------------------------------------:|:-------------------------------------------------:|
+| ![](assets/images/screenshots/splash.png) | ![](assets/images/screenshots/first.png) | ![](assets/images/screenshots/third.png) | ![](assets/images/screenshots/fourth_welcome.png) |
 
 
 - Login and Signup Alternative and Official
