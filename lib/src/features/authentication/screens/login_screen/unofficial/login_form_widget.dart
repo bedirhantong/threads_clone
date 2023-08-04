@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../models/forgot_password_model_bottom_sheet.dart';
-import '../main_screen/main_screen.dart';
+import '../../../models/forgot_password_model_bottom_sheet.dart';
+import '../../main_screen/main_screen.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({Key? key}) : super(key: key);

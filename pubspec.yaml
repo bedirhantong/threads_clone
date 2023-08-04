@@ -20,6 +20,7 @@ dependencies:
   flutter_otp_text_field: ^1.1.1
   like_button: ^2.0.5
   splash_view: ^2.0.1
+  url_launcher: ^6.1.12
 
 
 
