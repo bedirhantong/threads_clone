@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:threads_clone/src/features/authentication/screens/on_boarding/page2.dart';
 
@@ -11,12 +10,6 @@ class AppHome extends StatefulWidget {
 }
 
 class _AppHomeState extends State<AppHome> {
-  @override
-  void initState() {
-    FlutterNativeSplash.remove();
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
