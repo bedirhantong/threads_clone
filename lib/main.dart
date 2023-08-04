@@ -11,6 +11,7 @@ void main() {
     MaterialApp(
       debugShowCheckedModeBanner: false,
       home: SplashView(
+        showStatusBar: true,
         backgroundImageDecoration: const BackgroundImageDecoration(
           image: AssetImage('assets/images/welcome_images/login.png'),
           fit: BoxFit.cover,

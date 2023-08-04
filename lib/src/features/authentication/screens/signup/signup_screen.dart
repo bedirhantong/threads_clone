@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:threads_clone/src/common_widgets/form/form_header_widget.dart';
 import 'package:threads_clone/src/constants/image_strings.dart';
 import 'package:threads_clone/src/constants/text_strings.dart';
-import 'package:threads_clone/src/features/authentication/screens/login_screen/login_screen.dart';
+import 'package:threads_clone/src/features/authentication/screens/login_screen/unofficial/login_screen.dart';
 import 'package:threads_clone/src/features/authentication/screens/signup/widgets/signup_form_widget.dart';
 
 class Signup extends StatefulWidget {
