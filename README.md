@@ -65,7 +65,7 @@ This app allows:
 - [ ] Repost others posts
 - [ ] Dark and Light Theme
 - [ ] Using Getx package for navigation with animation
-- [ ] Responsive splash screen
+- [x] Responsive splash screen
 
 ## Screenshots
 

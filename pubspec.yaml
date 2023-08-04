@@ -15,31 +15,12 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   google_fonts: ^4.0.4
-  flutter_native_splash: ^2.3.1
   liquid_swipe: ^3.1.0
   smooth_page_indicator: ^1.1.0
   flutter_otp_text_field: ^1.1.1
   like_button: ^2.0.5
+  splash_view: ^2.0.1
 
-
-# flutter pub add flutter_native_splash
-# dart run flutter_native_splash:create
-# https://pub.dev/packages/flutter_native_splash
-flutter_native_splash:
-  color: "#ffffff"
-  image: assets/images/logo/threads_logo.png
-  branding: assets/images/meta.png
-  color_dark: "#121212"
-  image_dark: assets/images/logo/threads_logo.png
-  branding_dark: assets/images/meta.png
-
-  android_12:
-    image: assets/images/logo/threads_logo.png
-    icon_background_color: "#ffffff"
-    image_dark: assets/images/logo/threads_logo.png
-    icon_background_color_dark: "#121212"
-
-  web: false
 
 
 dev_dependencies:
