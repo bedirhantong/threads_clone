@@ -8,6 +8,8 @@ class EditProfile extends StatefulWidget {
   State<EditProfile> createState() => _EditProfileState();
 }
 
+bool light = false;
+
 class _EditProfileState extends State<EditProfile> {
   @override
   Widget build(BuildContext context) {
@@ -37,7 +39,6 @@ class _EditProfileState extends State<EditProfile> {
         return const Icon(Icons.close);
       },
     );
-    bool light = true;
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
