@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:threads_clone/src/features/authentication/models/refresh_indicator_model/threads_logo_indicator.dart';
+import 'package:threads_clone/src/features/authentication/screens/profile_screen/replies_posted.dart';
+import 'package:threads_clone/src/features/authentication/screens/profile_screen/threads_posted.dart';
 
-import '../login_screen/official/edit_profile.dart';
-import '../login_screen/official/replies_posted.dart';
-import '../login_screen/official/settings_screen.dart';
-import '../login_screen/official/threads_posted.dart';
+import 'edit_profile.dart';
+import 'settings_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});

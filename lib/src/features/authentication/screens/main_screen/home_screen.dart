@@ -23,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         centerTitle: true,
       ),
-      body: const SafeArea(
+      body: SafeArea(
         child: ThreadsLogoIndicator(
           child: ExampleList(),
         ),
@@ -33,17 +33,41 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 class ExampleList extends StatelessWidget {
-  final int itemCount;
   final bool countElements;
   final bool reverse;
   final Color backgroundColor;
-  const ExampleList({
+  ExampleList({
     Key? key,
     this.reverse = false,
     this.countElements = false,
     this.backgroundColor = Colors.black,
-    this.itemCount = 4,
   }) : super(key: key);
+
+  static double calculateLineLength(int screenWidth, int totalLines) {
+    // Başlangıçta her satır eşit uzunlukta olacak şekilde hesapla
+    double initialLineLength = screenWidth.toDouble();
+
+    // Satır sayısı arttıkça çubuğun uzunluğunu hesapla
+    double decrementFactor =
+        0.8; // Çizgi uzunluğunun azalma faktörü (0.2 yerine istediğiniz bir değer verebilirsiniz)
+    double incrementalLineLength =
+        initialLineLength * (1.0 - (totalLines - 1) * decrementFactor);
+
+    return incrementalLineLength;
+  }
+
+  static double calculateHeight(String postContent, int screenWidth) {
+    // Verilen metni satır sayısına bölmek için gerekli işlemler
+    List<String> lines = postContent.split('\n');
+    int totalLines = lines.length;
+
+    // Satır sayısı 0 ise varsayılan bir değer döndür
+    if (totalLines == 0) {
+      return 0.0;
+    }
+
+    return (totalLines * 12) + 52.0;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -66,43 +90,14 @@ class ExampleList extends StatelessWidget {
         ),
         itemBuilder: (BuildContext context, int index) =>
             buildPostsScreenForBody(index),
-        itemCount: itemCount,
+        itemCount: 1,
         separatorBuilder: (BuildContext context, int index) => const Divider(
           height: 0,
           color: Color(0xFFe2d6ce),
-          thickness: 1,
+          thickness: 0,
         ),
       ),
     );
-  }
-
-  double calculateLineLength(int screenWidth, int totalLines) {
-    // Başlangıçta her satır eşit uzunlukta olacak şekilde hesapla
-    double initialLineLength = screenWidth.toDouble();
-
-    // Satır sayısı arttıkça çubuğun uzunluğunu hesapla
-    double decrementFactor =
-        0.8; // Çizgi uzunluğunun azalma faktörü (0.2 yerine istediğiniz bir değer verebilirsiniz)
-    double incrementalLineLength =
-        initialLineLength * (1.0 - (totalLines - 1) * decrementFactor);
-
-    return incrementalLineLength;
-  }
-
-  double calculateHeight(String postContent, int screenWidth) {
-    // Verilen metni satır sayısına bölmek için gerekli işlemler
-    List<String> lines = postContent.split('\n');
-    int totalLines = lines.length;
-
-    // Satır sayısı 0 ise varsayılan bir değer döndür
-    if (totalLines == 0) {
-      return 0.0;
-    }
-
-    // Her satırın eşit uzunlukta başlayarak çubuğun uzunluğunu hesapla
-    double lineLength = calculateLineLength(screenWidth, totalLines);
-
-    return (totalLines * 12) + 52.0;
   }
 
   Column buildPostsScreenForBody(int screenWidth) {
@@ -190,118 +185,6 @@ class ExampleList extends StatelessWidget {
                 screenWidth),
             likeNum: 252),
       ],
-    );
-  }
-}
-
-class Element extends StatelessWidget {
-  final Widget? child;
-
-  const Element({Key? key, this.child}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.centerLeft,
-      padding: const EdgeInsets.all(20),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          FakeBox(height: 80, width: 80, child: child),
-          const SizedBox(width: 20),
-          const Expanded(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                FakeBox(height: 8, width: double.infinity),
-                FakeBox(height: 8, width: double.infinity),
-                FakeBox(height: 8, width: 200),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class FakeBox extends StatelessWidget {
-  final Widget? child;
-  const FakeBox({
-    Key? key,
-    required this.width,
-    required this.height,
-    this.child,
-  }) : super(key: key);
-
-  final double width;
-  final double height;
-
-  static const _boxDecoration = BoxDecoration(
-    color: Color(0xFFE2D8D7),
-    borderRadius: BorderRadius.all(
-      Radius.circular(10),
-    ),
-  );
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 10),
-      width: width,
-      height: height,
-      decoration: _boxDecoration,
-      child: child,
-    );
-  }
-}
-
-class ExampleHorizontalList extends StatelessWidget {
-  final int itemCount;
-  final bool reverse;
-  final Color backgroundColor;
-  final bool isHorizontal;
-
-  const ExampleHorizontalList({
-    Key? key,
-    this.reverse = false,
-    this.backgroundColor = Colors.red,
-    this.itemCount = 14,
-    this.isHorizontal = true,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return DecoratedBox(
-      decoration: BoxDecoration(
-        color: backgroundColor,
-        boxShadow: const [
-          BoxShadow(
-            blurRadius: 2,
-            color: Colors.black12,
-            spreadRadius: 0.5,
-            offset: Offset(0.0, .0),
-          )
-        ],
-      ),
-      child: ListView.builder(
-        padding: const EdgeInsets.all(16),
-        reverse: reverse,
-        scrollDirection: isHorizontal ? Axis.horizontal : Axis.vertical,
-        physics: const AlwaysScrollableScrollPhysics(
-          parent: ClampingScrollPhysics(),
-        ),
-        itemBuilder: (BuildContext context, int index) => const Padding(
-          padding: EdgeInsets.all(16.0),
-          child: FakeBox(
-            width: 300,
-            height: 300,
-          ),
-        ),
-        itemCount: itemCount,
-      ),
     );
   }
 }

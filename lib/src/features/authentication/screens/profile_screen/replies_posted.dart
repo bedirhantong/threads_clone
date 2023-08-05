@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-import '../../comments_of_post_screen/build_post_include_all.dart';
+import '../comments_of_post_screen/build_post_include_all.dart';
 
-class ThreadsPosted extends StatefulWidget {
-  const ThreadsPosted({super.key});
+class RepliesPosted extends StatefulWidget {
+  const RepliesPosted({super.key});
 
   @override
-  State<ThreadsPosted> createState() => _ThreadsPostedState();
+  State<RepliesPosted> createState() => _RepliesPostedState();
 }
 
-class _ThreadsPostedState extends State<ThreadsPosted> {
+class _RepliesPostedState extends State<RepliesPosted> {
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
@@ -20,17 +20,29 @@ class _ThreadsPostedState extends State<ThreadsPosted> {
         // All posts
         child: Column(
           children: [
-            // A post
+            BuildPostWithEverything2(
+                whoPosted: 'me',
+                username: 'bdotng',
+                whoCommented: 'serhan',
+                whatTextIsPosted: 'No no No No no yes means no',
+                whenPosted: '7 hours ago',
+                height:
+                    calculateHeight('No no No No no yes means no', screenWidth),
+                likeNum: 23),
+            const SizedBox(
+              height: 10.0,
+            ),
             BuildPostWithEverything2(
                 whoPosted: 'me',
                 username: 'bdotng',
                 whoCommented: 'musa',
-                whatImageIsPosted:
-                    'assets/images/temp_user_images/bdo_post.png',
-                whatTextIsPosted: 'Recent Illustration of mine',
-                whenPosted: '6 hours ago',
-                height: calculateHeight('How you doin\'?', screenWidth),
+                whatTextIsPosted: 'Şemamame buke',
+                whenPosted: '16 hours ago',
+                height: calculateHeight('Şemamame buke', screenWidth),
                 likeNum: 23),
+            const SizedBox(
+              height: 10.0,
+            ),
             BuildPostWithEverything2(
               whoPosted: 'me',
               username: 'bdotng',
@@ -39,9 +51,6 @@ class _ThreadsPostedState extends State<ThreadsPosted> {
               whenPosted: 'last year',
               height: calculateHeight('I know!', screenWidth),
               likeNum: 324,
-            ),
-            const SizedBox(
-              height: 10.0,
             ),
           ],
         ),

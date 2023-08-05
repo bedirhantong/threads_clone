@@ -45,4 +45,5 @@ flutter:
     - assets/images/screenshots/
     - assets/images/forget_password/
     - assets/icons/
+    - assets/videos/
     - assets/images/refresh_indicator/
