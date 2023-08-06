@@ -12,6 +12,7 @@ class PostScreen extends StatefulWidget {
 
 class _PostScreenState extends State<PostScreen> {
   ImagePicker picker = ImagePicker();
+  String visibility = "Anyone can reply";
 
   @override
   Widget build(BuildContext context) {
@@ -73,21 +74,36 @@ class _PostScreenState extends State<PostScreen> {
                                 'Anyone can reply',
                                 style: TextStyle(color: Colors.white),
                               ),
-                              onPressed: () => Navigator.pop(context),
+                              onPressed: () {
+                                setState(() {
+                                  visibility = "Anyone can reply";
+                                });
+                                Navigator.pop(context);
+                              },
                             ),
                             TextButton(
                               child: const Text(
                                 'My followers can reply',
                                 style: TextStyle(color: Colors.white),
                               ),
-                              onPressed: () => Navigator.pop(context),
+                              onPressed: () {
+                                setState(() {
+                                  visibility = "My followers can reply";
+                                });
+                                Navigator.pop(context);
+                              },
                             ),
                             TextButton(
                               child: const Text(
                                 'No one can reply',
                                 style: TextStyle(color: Colors.white),
                               ),
-                              onPressed: () => Navigator.pop(context),
+                              onPressed: () {
+                                setState(() {
+                                  visibility = "No one can reply";
+                                });
+                                Navigator.pop(context);
+                              },
                             ),
                           ],
                         ),
@@ -95,9 +111,9 @@ class _PostScreenState extends State<PostScreen> {
                     },
                   );
                 },
-                child: const Text(
-                  'Anyone can reply',
-                  style: TextStyle(color: Colors.grey, fontSize: 15.0),
+                child: Text(
+                  visibility,
+                  style: const TextStyle(color: Colors.grey, fontSize: 15.0),
                 ),
               ),
               TextButton(
