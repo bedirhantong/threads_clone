@@ -22,6 +22,7 @@ dependencies:
   splash_view: ^2.0.1
   url_launcher: ^6.1.12
   custom_refresh_indicator: ^2.2.1
+  image_picker: ^1.0.2
 
 
 
