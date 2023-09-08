@@ -1,5 +1,5 @@
 # Threads App Clone
-
+![](assets/images/screenshots/threads_dash.png)
 This is a clone app of Threads app but with customized features.
 
 
