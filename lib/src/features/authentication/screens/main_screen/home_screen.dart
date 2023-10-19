@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:threads_clone/src/features/authentication/models/refresh_indicator_model/threads_logo_indicator.dart';
+import '../../objects/user.dart';
 import '../comments_of_post_screen/build_post_include_all.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({super.key, required this.user});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
+  final User user;
 }
 
 class _HomeScreenState extends State<HomeScreen> {
@@ -36,6 +38,7 @@ class ExampleList extends StatelessWidget {
   final bool countElements;
   final bool reverse;
   final Color backgroundColor;
+
   ExampleList({
     Key? key,
     this.reverse = false,

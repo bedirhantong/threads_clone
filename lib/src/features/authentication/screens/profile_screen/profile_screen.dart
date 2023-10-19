@@ -2,14 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:threads_clone/src/features/authentication/screens/profile_screen/replies_posted.dart';
 import 'package:threads_clone/src/features/authentication/screens/profile_screen/threads_posted.dart';
 
+import '../../objects/user.dart';
 import 'edit_profile.dart';
 import 'settings_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({super.key});
+  const ProfileScreen({super.key, required this.user});
 
   @override
   State<ProfileScreen> createState() => _ProfileScreenState();
+
+  final User user;
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
@@ -25,9 +28,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              buildListTileOfUsername(),
-              buildPaddingOfUserPref1(),
-              buildPaddingOfUserPref2(),
+              buildListTileOfUsername(widget.user),
+              buildPaddingOfUserPref1(widget.user.bio),
+              buildPaddingOfUserPref2(widget.user.phoneNumber),
               buildProfileSettingsButtons(),
               Expanded(
                 flex: 7,
@@ -51,7 +54,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
             // Your onPressed logic here
           },
           icon: Image.asset(
-            'assets/images/logo/insta.png', // Replace with your custom icon image path
+            'assets/images/logo/insta.png',
+            // Replace with your custom icon image path
             width: 24, // Set the width as per your requirement
             height: 24, // Set the height as per your requirement
           ),
@@ -72,43 +76,43 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 
-  Padding buildPaddingOfUserPref2() {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 15.0),
+  Padding buildPaddingOfUserPref2(String bio) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 15.0),
       child: Text(
-        'Professional overthinker',
-        style: TextStyle(fontSize: 14, color: Colors.white),
+        bio,
+        style: const TextStyle(fontSize: 14, color: Colors.white),
       ),
     );
   }
 
-  Padding buildPaddingOfUserPref1() {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 15.0),
+  Padding buildPaddingOfUserPref1(String bio) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 15.0),
       child: Text(
-        'CSE_Akdeniz',
-        style: TextStyle(fontSize: 14, color: Colors.white),
+        bio,
+        style: const TextStyle(fontSize: 14, color: Colors.white),
       ),
     );
   }
 
-  ListTile buildListTileOfUsername() {
+  ListTile buildListTileOfUsername(User user) {
     return ListTile(
-      title: const Text(
-        'Bedirhan',
-        style: TextStyle(fontSize: 25, color: Colors.white),
+      title: Text(
+        user.name,
+        style: const TextStyle(fontSize: 25, color: Colors.white),
       ),
-      subtitle: const Text(
-        'bedirhantng',
-        style: TextStyle(fontSize: 14, color: Colors.white),
+      subtitle: Text(
+        user.name,
+        style: const TextStyle(fontSize: 14, color: Colors.white),
       ),
       trailing: CircleAvatar(
         radius: 26,
         backgroundColor: Colors.transparent,
         child: ClipRRect(
           borderRadius: BorderRadius.circular(30),
-          child: const Image(
-            image: AssetImage('assets/images/temp_user_images/me.jpg'),
+          child: Image(
+            image: AssetImage(user.profilePictureLink),
           ),
         ),
       ),

@@ -38,12 +38,12 @@ class _OfficialLoginPageState extends State<OfficialLoginPage> {
                   ),
                   onPressed: () {
                     // Navigator.popUntil(context, (route) => ); Main screen e kadar
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const MainScreen(),
-                      ),
-                    );
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //     builder: (context) => const MainScreen(),
+                    //   ),
+                    // );
                   },
                   child: Padding(
                     padding: const EdgeInsets.all(3.0),

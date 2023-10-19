@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:threads_clone/src/features/authentication/objects/user.dart';
+import 'package:threads_clone/src/features/authentication/objects/users.dart';
 import '../../../models/forgot_password_model_bottom_sheet.dart';
 import '../../main_screen/main_screen.dart';
 
@@ -27,6 +29,18 @@ class _LoginFormState extends State<LoginForm> {
 
   @override
   Widget build(BuildContext context) {
+    String email = "";
+    String password = "";
+
+
+    User user = User(
+      name: '',
+      email: email,
+      password: password,
+      phoneNumber: '',
+      bio: '',);
+
+
     return Form(
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 10.0),
@@ -40,6 +54,10 @@ class _LoginFormState extends State<LoginForm> {
                 hintText: "E-mail",
                 border: OutlineInputBorder(),
               ),
+              onChanged: (value) {
+                email = value;
+                user.email = value;
+              },
             ),
             const SizedBox(
               height: 20,
@@ -53,6 +71,10 @@ class _LoginFormState extends State<LoginForm> {
                 border: const OutlineInputBorder(),
                 suffixIcon: _buildSuffixIcon(),
               ),
+              onChanged: (value) {
+                password = value;
+                user.password = value;
+              },
             ),
             const SizedBox(
               height: 10,
@@ -70,13 +92,63 @@ class _LoginFormState extends State<LoginForm> {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
+                  if (Users.usersD.containsValue(email)) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            MainScreen(
+                              user:
+                              user,
+                            ),
+                      ),
+                    );
+                  } else if (email == '' || password == '') {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          title: const Text('Hata'),
+                          content: const Text(
+                              'E-posta veya şifre alanını boş bırakmayınız'),
+                          actions: <Widget>[
+                            TextButton(
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                              child: const Text('Kapat'),
+                            ),
+                          ],
+                        );
+                      },
+                    );
+                  } else {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          title: const Text('Hata'),
+                          content: const Text(
+                              'E-posta veya şifre yanlış. Veya öyle bir hesap bulunamadı'),
+                          actions: <Widget>[
+                            TextButton(
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                              child: const Text('Kapat'),
+                            ),
+                          ],
+                        );
+                      },
+                    );
+                  }
                   // Navigator.popUntil(context, (route) => ); Main screen e kadar
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const MainScreen(),
-                    ),
-                  );
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(
+                  //     builder: (context) => const MainScreen(),
+                  //   ),
+                  // );
                 },
                 child: Text(
                   'Login'.toUpperCase(),

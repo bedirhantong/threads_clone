@@ -1,11 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:threads_clone/src/features/authentication/objects/user.dart';
+import 'package:threads_clone/src/features/authentication/objects/users.dart';
 
 import '../../login_screen/unofficial/login_screen.dart';
 
-class SignUpFormWidget extends StatelessWidget {
+class SignUpFormWidget extends StatefulWidget {
   const SignUpFormWidget({
     super.key,
   });
+
+  @override
+  State<SignUpFormWidget> createState() => _SignUpFormWidgetState();
+}
+
+class _SignUpFormWidgetState extends State<SignUpFormWidget> {
+  String name = "";
+  String email = "";
+  String password = "";
+  String? phoneNumber = "";
+
+  late User user;
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +34,9 @@ class SignUpFormWidget extends StatelessWidget {
                 hintText: "Your Full Name",
                 prefixIcon: Icon(Icons.person_outline_rounded),
               ),
+              onChanged: (value) {
+                name = value;
+              },
             ),
             const SizedBox(
               height: 15,
@@ -30,6 +47,9 @@ class SignUpFormWidget extends StatelessWidget {
                 hintText: "E-mail",
                 prefixIcon: Icon(Icons.email_outlined),
               ),
+              onChanged: (value) {
+                email = value;
+              },
             ),
             const SizedBox(
               height: 15,
@@ -40,6 +60,9 @@ class SignUpFormWidget extends StatelessWidget {
                 hintText: "Phone no",
                 prefixIcon: Icon(Icons.numbers),
               ),
+              onChanged: (value) {
+                phoneNumber = value;
+              },
             ),
             const SizedBox(
               height: 15,
@@ -50,6 +73,9 @@ class SignUpFormWidget extends StatelessWidget {
                 hintText: "Password",
                 prefixIcon: Icon(Icons.fingerprint),
               ),
+              onChanged: (value) {
+                password = value;
+              },
             ),
             const SizedBox(
               height: 15,
@@ -58,10 +84,27 @@ class SignUpFormWidget extends StatelessWidget {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
+                  user = User(
+                      name: name,
+                      email: email,
+                      password: password,
+                      phoneNumber: '',
+                      bio: '');
+
+                  Users.list.add(user);
+
+                  Users.users.putIfAbsent(
+                    name,
+                    () => user,
+                  );
+                  Users.usersD.putIfAbsent(email, () => password);
+
                   Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const LoginScreen()));
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LoginScreen(),
+                    ),
+                  );
                 },
                 child: Text(
                   "Signup".toUpperCase(),

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:threads_clone/src/features/authentication/screens/login_screen/official/official_login.dart';
 
+import '../login_screen/unofficial/login_screen.dart';
+
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
 
@@ -44,7 +46,7 @@ class WelcomeScreen extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const OfficialLoginPage(),
+                      builder: (context) => const LoginScreen(),
                     ),
                   );
                 },

@@ -8,20 +8,35 @@ import 'src/features/authentication/screens/on_boarding/app_home.dart';
 
 void main() {
   runApp(
+    // MaterialApp(
+    //   debugShowCheckedModeBanner: false,
+    //   home: SplashView(
+    //     showStatusBar: true,
+    //     backgroundImageDecoration: const BackgroundImageDecoration(
+    //       image: AssetImage('assets/images/welcome_images/login.png'),
+    //       fit: BoxFit.cover,
+    //     ),
+    //     logo: const Image(
+    //       image: AssetImage('assets/images/threads.png'),
+    //       height: 150,
+    //       width: 150,
+    //     ),
+    //     loadingIndicator: const CupertinoActivityIndicator(),
+    //     done: Done(
+    //       const MyApp(),
+    //     ),
+    //   ),
+    // ),
     MaterialApp(
       debugShowCheckedModeBanner: false,
       home: SplashView(
+        duration: const Duration(milliseconds: 6000),
+        backgroundColor: Colors.white,
         showStatusBar: true,
         backgroundImageDecoration: const BackgroundImageDecoration(
-          image: AssetImage('assets/images/welcome_images/login.png'),
+          image: AssetImage('assets/images/threads_animation.gif'),
           fit: BoxFit.cover,
         ),
-        logo: const Image(
-          image: AssetImage('assets/images/threads.png'),
-          height: 150,
-          width: 150,
-        ),
-        loadingIndicator: const CupertinoActivityIndicator(),
         done: Done(
           const MyApp(),
         ),

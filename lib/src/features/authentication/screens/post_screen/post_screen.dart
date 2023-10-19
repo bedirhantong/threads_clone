@@ -3,11 +3,14 @@ import 'package:image_picker/image_picker.dart';
 import 'package:threads_clone/src/features/authentication/screens/main_screen/main_screen.dart';
 import 'dart:io';
 
+import '../../objects/user.dart';
+
 class PostScreen extends StatefulWidget {
-  const PostScreen({super.key});
+  const PostScreen({super.key, required this.user});
 
   @override
   State<PostScreen> createState() => _PostScreenState();
+  final User user;
 }
 
 class _PostScreenState extends State<PostScreen> {
@@ -121,7 +124,9 @@ class _PostScreenState extends State<PostScreen> {
                   Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const MainScreen(),
+                        builder: (context) => MainScreen(
+                          user: widget.user,
+                        ),
                       ),
                       (route) => false);
                 },

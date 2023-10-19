@@ -12,7 +12,7 @@ class LoginScreen extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return Scaffold(
       // backgroundColor: Theme.of(context).colorScheme.background,
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white38,
       body: SingleChildScrollView(
         // childini scrollable yapıyor
         child: Container(
