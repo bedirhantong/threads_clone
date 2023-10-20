@@ -32,14 +32,13 @@ class _LoginFormState extends State<LoginForm> {
     String email = "";
     String password = "";
 
-
     User user = User(
       name: '',
       email: email,
       password: password,
       phoneNumber: '',
-      bio: '',);
-
+      bio: '',
+    );
 
     return Form(
       child: Container(
@@ -92,15 +91,16 @@ class _LoginFormState extends State<LoginForm> {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
-                  if (Users.usersD.containsValue(email)) {
+                  var emailVarmi = Users.usersD.containsKey(email);
+                  var value = Users.usersD[email];
+
+                  if (emailVarmi && (value == user.password)) {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) =>
-                            MainScreen(
-                              user:
-                              user,
-                            ),
+                        builder: (context) => MainScreen(
+                          user: user,
+                        ),
                       ),
                     );
                   } else if (email == '' || password == '') {

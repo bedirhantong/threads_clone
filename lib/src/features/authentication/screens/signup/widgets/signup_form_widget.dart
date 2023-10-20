@@ -17,7 +17,7 @@ class _SignUpFormWidgetState extends State<SignUpFormWidget> {
   String name = "";
   String email = "";
   String password = "";
-  String? phoneNumber = "";
+  String phoneNumber = "";
 
   late User user;
 
@@ -88,7 +88,7 @@ class _SignUpFormWidgetState extends State<SignUpFormWidget> {
                       name: name,
                       email: email,
                       password: password,
-                      phoneNumber: '',
+                      phoneNumber: phoneNumber,
                       bio: '');
 
                   Users.list.add(user);
@@ -97,7 +97,7 @@ class _SignUpFormWidgetState extends State<SignUpFormWidget> {
                     name,
                     () => user,
                   );
-                  Users.usersD.putIfAbsent(email, () => password);
+                  Users.usersD.putIfAbsent(email, () => user);
 
                   Navigator.push(
                     context,

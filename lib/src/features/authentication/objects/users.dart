@@ -10,7 +10,8 @@ class Users {
         bio: ''),
   };
 
-  static Map<String, String> usersD = {};
+  static Map<String, User> usersD = {
+  };
 
   static List<User> list = [];
 }
