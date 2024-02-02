@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import '../../../../constants/app_starter.dart';
 import '../../objects/user.dart';
 
 class SearchScreen extends StatefulWidget {
@@ -13,85 +13,63 @@ class SearchScreen extends StatefulWidget {
 class _SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Material App',
-      home: Scaffold(
+    return Scaffold(
+      backgroundColor: Colors.black,
+      appBar: AppBar(
         backgroundColor: Colors.black,
-        appBar: AppBar(
-          backgroundColor: Colors.black,
-          title: const Align(
-            alignment: Alignment.centerLeft,
-            child: Text(
-              'Search',
-              style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
+        title: Padding(
+          padding: const EdgeInsets.all(10),
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.grey,
+              borderRadius:
+                  BorderRadius.circular(11), // Increase border radius here
+            ),
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: TextButton.icon(
+                onPressed: () {
+                  // method to show the search bar
+                  showSearch(
+                    context: context,
+                    // delegate to customize the search bar
+                    delegate: CustomSearchDelegateWithDummyData(),
+                  );
+                },
+                icon: const Icon(
+                  Icons.search,
+                  color: Colors.white,
+                ),
+                label: const Text(
+                  'Search',
+                  style: TextStyle(color: Colors.black26, fontSize: 19),
+                ),
+              ),
             ),
           ),
         ),
-        body: SafeArea(
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.grey,
-                      borderRadius: BorderRadius.circular(
-                          11), // Increase border radius here
-                    ),
-                    child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: TextButton.icon(
-                        onPressed: () {
-                          // method to show the search bar
-                          showSearch(
-                            context: context,
-                            // delegate to customize the search bar
-                            delegate: CustomSearchDelegateWithDummyData(),
-                          );
-                        },
-                        icon: const Icon(
-                          Icons.search,
-                          color: Colors.white,
-                        ),
-                        label: const Text(
-                          'Search',
-                          style: TextStyle(color: Colors.black26, fontSize: 19),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                const BuildFollowableUser(
-                  imageAssetLink: 'assets/images/temp_user_images/serhan.jpg',
-                  username: 'srhnbymz',
-                  name: 'Serhan Baymaz',
-                ),
-                const BuildFollowableUser(
-                  imageAssetLink: 'assets/images/temp_user_images/sinan.jpg',
-                  username: 'demir_exe',
-                  name: 'Sinan Demir',
-                ),
-                const BuildFollowableUser(
-                  imageAssetLink: 'assets/images/temp_user_images/musa.jpg',
-                  username: 'alatasms',
-                  name: 'Musa Alataş',
-                ),
-                const BuildFollowableUser(
-                  imageAssetLink: 'assets/images/temp_user_images/yusuf.jpg',
-                  username: 'yuciferr',
-                  name: 'Yusuf Samed Çelik',
-                ),
-                const BuildFollowableUser(
-                  imageAssetLink: 'assets/images/temp_user_images/onur.jpg',
-                  username: '10nurcetin',
-                  name: 'Onur Çetin',
-                ),
-              ],
-            ),
-          ),
+      ),
+      body: DecoratedBox(
+        decoration: const BoxDecoration(
+          color: Colors.black,
+          boxShadow: [
+            BoxShadow(
+              blurRadius: 2,
+              color: Colors.black12,
+              spreadRadius: 0.5,
+              offset: Offset(0.0, .0),
+            )
+          ],
+        ),
+        child: ListView.builder(
+          itemCount: AppStarter.allUsers.length,
+          itemBuilder: (context, index) {
+            return BuildFollowableUser(
+              imageAssetLink: AppStarter.allUsers[index].profilePictureLink,
+              username: AppStarter.allUsers[index].name,
+              name: AppStarter.allUsers[index].name,
+            );
+          },
         ),
       ),
     );

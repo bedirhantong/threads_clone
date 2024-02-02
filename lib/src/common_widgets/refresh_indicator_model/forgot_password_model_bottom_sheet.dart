@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../../../constants/sizes.dart';
-import '../../../constants/text_strings.dart';
-import '../screens/forget_password/forget_password_mail/forgot_password_mail.dart';
-import '../screens/forget_password/forget_password_phone/forgot_password_phone.dart';
-import '../screens/forget_password/forget_password_options/forgot_password_btn_widget.dart';
+import '../../constants/sizes.dart';
+import '../../constants/text_strings.dart';
+import '../../features/authentication/screens/forget_password/forget_password_mail/forgot_password_mail.dart';
+import '../../features/authentication/screens/forget_password/forget_password_options/forgot_password_btn_widget.dart';
+import '../../features/authentication/screens/forget_password/forget_password_phone/forgot_password_phone.dart';
 
 class ForgotPasswordScreen {
   static Future<dynamic> buildShowModalBottomSheet(BuildContext context) {
@@ -34,10 +34,11 @@ class ForgotPasswordScreen {
               onTap: () {
                 Navigator.pop(context); //bottom sheetten öncekine döneriz
                 Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) =>
-                            const ForgotPasswordMailScreen()));
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ForgotPasswordMailScreen(),
+                  ),
+                );
               },
             ),
             const SizedBox(
@@ -50,10 +51,11 @@ class ForgotPasswordScreen {
               onTap: () {
                 Navigator.pop(context); //bottom sheetten öncekine döneriz
                 Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) =>
-                            const ForgotPasswordPhoneScreen()));
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ForgotPasswordPhoneScreen(),
+                  ),
+                );
               },
             ),
           ],

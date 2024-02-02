@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:threads_clone/src/features/authentication/objects/user.dart';
 import 'package:threads_clone/src/features/authentication/objects/users.dart';
-import '../../../models/forgot_password_model_bottom_sheet.dart';
+import '../../../../../common_widgets/refresh_indicator_model/forgot_password_model_bottom_sheet.dart';
 import '../../main_screen/main_screen.dart';
 
 class LoginForm extends StatefulWidget {
@@ -38,6 +38,7 @@ class _LoginFormState extends State<LoginForm> {
       password: password,
       phoneNumber: '',
       bio: '',
+      profilePictureLink: '',
     );
 
     return Form(
@@ -84,7 +85,12 @@ class _LoginFormState extends State<LoginForm> {
                 onPressed: () {
                   ForgotPasswordScreen.buildShowModalBottomSheet(context);
                 },
-                child: const Text('Forget Password?'),
+                child: const Text(
+                  'Forget Password?',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
               ),
             ),
             SizedBox(
@@ -94,54 +100,55 @@ class _LoginFormState extends State<LoginForm> {
                   var emailVarmi = Users.usersD.containsKey(email);
                   var value = Users.usersD[email];
 
-                  if (emailVarmi && (value == user.password)) {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => MainScreen(
-                          user: user,
-                        ),
+                  // if (emailVarmi && (value == user.password)) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => MainScreen(
+                        user: user,
                       ),
-                    );
-                  } else if (email == '' || password == '') {
-                    showDialog(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return AlertDialog(
-                          title: const Text('Hata'),
-                          content: const Text(
-                              'E-posta veya şifre alanını boş bırakmayınız'),
-                          actions: <Widget>[
-                            TextButton(
-                              onPressed: () {
-                                Navigator.of(context).pop();
-                              },
-                              child: const Text('Kapat'),
-                            ),
-                          ],
-                        );
-                      },
-                    );
-                  } else {
-                    showDialog(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return AlertDialog(
-                          title: const Text('Hata'),
-                          content: const Text(
-                              'E-posta veya şifre yanlış. Veya öyle bir hesap bulunamadı'),
-                          actions: <Widget>[
-                            TextButton(
-                              onPressed: () {
-                                Navigator.of(context).pop();
-                              },
-                              child: const Text('Kapat'),
-                            ),
-                          ],
-                        );
-                      },
-                    );
-                  }
+                    ),
+                  );
+                  // }
+                  // else if (email == '' || password == '') {
+                  //   showDialog(
+                  //     context: context,
+                  //     builder: (BuildContext context) {
+                  //       return AlertDialog(
+                  //         title: const Text('Hata'),
+                  //         content: const Text(
+                  //             'E-posta veya şifre alanını boş bırakmayınız'),
+                  //         actions: <Widget>[
+                  //           TextButton(
+                  //             onPressed: () {
+                  //               Navigator.of(context).pop();
+                  //             },
+                  //             child: const Text('Kapat'),
+                  //           ),
+                  //         ],
+                  //       );
+                  //     },
+                  //   );
+                  // } else {
+                  //   showDialog(
+                  //     context: context,
+                  //     builder: (BuildContext context) {
+                  //       return AlertDialog(
+                  //         title: const Text('Hata'),
+                  //         content: const Text(
+                  //             'E-posta veya şifre yanlış. Veya öyle bir hesap bulunamadı'),
+                  //         actions: <Widget>[
+                  //           TextButton(
+                  //             onPressed: () {
+                  //               Navigator.of(context).pop();
+                  //             },
+                  //             child: const Text('Kapat'),
+                  //           ),
+                  //         ],
+                  //       );
+                  //     },
+                  //   );
+                  // }
                   // Navigator.popUntil(context, (route) => ); Main screen e kadar
                   // Navigator.push(
                   //   context,
@@ -152,7 +159,7 @@ class _LoginFormState extends State<LoginForm> {
                 },
                 child: Text(
                   'Login'.toUpperCase(),
-                  style: const TextStyle(color: Colors.black),
+                  style: const TextStyle(color: Colors.white),
                 ),
               ),
             ),

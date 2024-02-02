@@ -3,10 +3,11 @@ import 'package:threads_clone/src/features/authentication/objects/thread.dart';
 class User {
   String? id;
   String name = "edit here";
+  String? username = "edit here";
   String email = "edit here";
   String password = "edit here";
   String phoneNumber = "edit here";
-  String profilePictureLink = "assets/images/nonuser.jpg";
+  String profilePictureLink = "";
   String bio = "edit here";
   bool isPrivate = false;
   List<User> friends = [];
@@ -16,6 +17,8 @@ class User {
   // String token = "";
 
   User({
+    this.username,
+    required this.profilePictureLink,
     required this.name,
     required this.email,
     required this.password,

@@ -2,16 +2,16 @@ import 'package:threads_clone/src/features/authentication/objects/user.dart';
 
 class Users {
   static Map<String, User> users = {
-    'bedirhan':
-    User(name: '',
+    'bedirhan': User(
+        name: '',
         email: '',
         password: '',
         phoneNumber: '',
-        bio: ''),
+        bio: '',
+        profilePictureLink: ''),
   };
 
-  static Map<String, User> usersD = {
-  };
+  static Map<String, User> usersD = {};
 
   static List<User> list = [];
 }
