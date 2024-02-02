@@ -46,7 +46,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   AppBar buildAppBar(BuildContext context) {
     return AppBar(
-      leading: const Icon(Icons.lock),
+      leading: const Icon(
+        Icons.lock,
+        color: Colors.white,
+      ),
       backgroundColor: Colors.black,
       actions: [
         IconButton(
@@ -70,7 +73,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
             );
           },
-          icon: const Icon(Icons.settings),
+          icon: const Icon(
+            Icons.settings,
+            color: Colors.white,
+          ),
         ),
       ],
     );
@@ -112,7 +118,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
         child: ClipRRect(
           borderRadius: BorderRadius.circular(30),
           child: Image(
-            image: AssetImage(user.profilePictureLink),
+            image: AssetImage(
+              'assets/images/temp_user_images/${user.username}.jpg',
+            ),
           ),
         ),
       ),
@@ -178,7 +186,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   DefaultTabController buildTaps() {
     return DefaultTabController(
-      length: 8,
+      length: 2,
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
@@ -190,6 +198,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             indicatorColor: Colors.white,
             indicatorWeight: 3,
             indicatorSize: TabBarIndicatorSize.tab,
+            tabAlignment: TabAlignment.center,
             tabs: [
               Tab(
                 text: 'Threads',

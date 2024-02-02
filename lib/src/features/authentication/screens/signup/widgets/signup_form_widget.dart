@@ -89,7 +89,9 @@ class _SignUpFormWidgetState extends State<SignUpFormWidget> {
                       email: email,
                       password: password,
                       phoneNumber: phoneNumber,
-                      bio: '');
+                      bio: '',
+                      profilePictureLink: '',
+                      username: '');
 
                   Users.list.add(user);
 

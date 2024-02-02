@@ -93,7 +93,7 @@ class _EditProfileState extends State<EditProfile> {
                             borderRadius: BorderRadius.circular(30),
                             child: const Image(
                               image: AssetImage(
-                                  'assets/images/temp_user_images/me.jpg'),
+                                  'assets/images/temp_user_images/betng.jpg'),
                             ),
                           ),
                         ),

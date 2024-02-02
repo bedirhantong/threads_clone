@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:threads_clone/src/features/authentication/screens/on_boarding/page2.dart';
 
-class AppHome extends StatefulWidget {
-  const AppHome({super.key});
+class OnboardingFirst extends StatefulWidget {
+  const OnboardingFirst({super.key});
 
   @override
-  State<AppHome> createState() => _AppHomeState();
+  State<OnboardingFirst> createState() => _OnboardingFirstState();
 }
 
-class _AppHomeState extends State<AppHome> {
+class _OnboardingFirstState extends State<OnboardingFirst> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
