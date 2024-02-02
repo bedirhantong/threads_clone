@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../login_screen/official/official_login.dart';
+import '../login_screen/unofficial/login_screen.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -36,7 +37,7 @@ class SettingsScreen extends StatelessWidget {
                   Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const OfficialLoginPage(),
+                        builder: (context) => const LoginScreen(),
                       ),
                       (route) => false);
                 },

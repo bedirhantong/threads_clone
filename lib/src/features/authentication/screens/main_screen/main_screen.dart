@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:threads_clone/src/features/authentication/objects/user.dart';
 import 'package:threads_clone/src/features/authentication/screens/main_screen/home_screen.dart';
 import 'package:threads_clone/src/features/authentication/screens/notifications_screen/notifications_screen.dart';
 
@@ -7,22 +8,40 @@ import '../profile_screen/profile_screen.dart';
 import '../search_screen/search_screen.dart';
 
 class MainScreen extends StatefulWidget {
-  const MainScreen({super.key});
+  const MainScreen({super.key, required this.user});
 
   @override
   State<MainScreen> createState() => _MainScreenState();
+
+  final User user;
 }
 
 class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
+  late List<Widget> _widgetOptions = [];
 
-  static const List<Widget> _widgetOptions = <Widget>[
-    HomeScreen(),
-    SearchScreen(),
-    PostScreen(),
-    NotificationsScreen(),
-    ProfileScreen(),
-  ];
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _widgetOptions = <Widget>[
+      HomeScreen(
+        user: widget.user,
+      ),
+      SearchScreen(
+        user: widget.user,
+      ),
+      PostScreen(
+        user: widget.user,
+      ),
+      NotificationsScreen(
+        user: widget.user,
+      ),
+      ProfileScreen(
+        user: widget.user,
+      ),
+    ];
+  }
 
   @override
   Widget build(BuildContext context) {

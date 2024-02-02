@@ -1,21 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:threads_clone/src/features/authentication/objects/thread.dart';
 import 'package:threads_clone/src/features/authentication/screens/main_screen/main_screen.dart';
 import 'dart:io';
 
+import '../../objects/user.dart';
+
 class PostScreen extends StatefulWidget {
-  const PostScreen({super.key});
+  const PostScreen({super.key, required this.user});
 
   @override
   State<PostScreen> createState() => _PostScreenState();
+  final User user;
 }
 
 class _PostScreenState extends State<PostScreen> {
   ImagePicker picker = ImagePicker();
   String visibility = "Anyone can reply";
+  Thread thread = Thread(
+      whoPosted: "", whenPosted: "2 days", likeNum: 0, height: 0, username: "");
 
   @override
   Widget build(BuildContext context) {
+    thread.whoPosted = widget.user.name;
+    thread.username = widget.user.username!;
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -121,7 +130,9 @@ class _PostScreenState extends State<PostScreen> {
                   Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const MainScreen(),
+                        builder: (context) => MainScreen(
+                          user: widget.user,
+                        ),
                       ),
                       (route) => false);
                 },
