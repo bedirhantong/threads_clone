@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:threads_clone/src/features/authentication/objects/thread.dart';
 import 'package:threads_clone/src/features/authentication/screens/main_screen/main_screen.dart';
 import 'dart:io';
-import '../../../../constants/app_starter.dart';
+import '../../view_model/app_starter.dart';
 import '../../objects/user.dart';
 
-class PostScreen extends StatefulWidget {
+class PostScreen extends ConsumerStatefulWidget {
   const PostScreen({super.key, required this.user});
 
   @override
-  State<PostScreen> createState() => _PostScreenState();
+  ConsumerState<PostScreen> createState() => _PostScreenState();
   final User user;
 }
 
-class _PostScreenState extends State<PostScreen> {
+class _PostScreenState extends ConsumerState<PostScreen> {
   String visibility = "Anyone can reply";
   late String content;
 
@@ -41,6 +42,7 @@ class _PostScreenState extends State<PostScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final userViewModel = ref.watch(userViewModelProvider);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -216,6 +218,16 @@ class _PostScreenState extends State<PostScreen> {
               ),
               TextButton(
                 onPressed: () {
+                  ref.read(userViewModelProvider).currentUser.threadsPosted.add(
+                        Thread(
+                          whoPosted: widget.user,
+                          whenPosted: "2 day",
+                          likeNum: 0,
+                          whatTextIsPosted: textContent,
+                          whatImageIsPosted: whatImageIsPosted,
+                        ),
+                      );
+
                   AppStarter.allThreads.add(
                     Thread(
                       whoPosted: widget.user,

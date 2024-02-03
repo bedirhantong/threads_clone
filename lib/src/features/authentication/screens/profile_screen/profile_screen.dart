@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:threads_clone/src/features/authentication/screens/profile_screen/replies_posted.dart';
 import 'package:threads_clone/src/features/authentication/screens/profile_screen/threads_posted.dart';
-
 import '../../objects/user.dart';
 import 'edit_profile.dart';
 import 'settings_screen.dart';

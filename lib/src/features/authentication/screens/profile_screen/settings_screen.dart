@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../main.dart';
 import '../login_screen/official/official_login.dart';
 import '../login_screen/unofficial/login_screen.dart';
 
@@ -35,11 +36,12 @@ class SettingsScreen extends StatelessWidget {
               child: TextButton(
                 onPressed: () {
                   Navigator.pushAndRemoveUntil(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const LoginScreen(),
-                      ),
-                      (route) => false);
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const MyApp(),
+                    ),
+                    (route) => false,
+                  );
                 },
                 child: const Text(
                   'Log Out',

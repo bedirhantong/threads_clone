@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:splash_view/source/presentation/pages/splash_view.dart';
 import 'package:splash_view/source/presentation/widgets/background_decoration.dart';
 import 'package:splash_view/source/presentation/widgets/done.dart';
@@ -9,37 +10,20 @@ import 'src/features/authentication/screens/on_boarding/app_home.dart';
 
 void main() {
   runApp(
-    // MaterialApp(
-    //   debugShowCheckedModeBanner: false,
-    //   home: SplashView(
-    //     showStatusBar: true,
-    //     backgroundImageDecoration: const BackgroundImageDecoration(
-    //       image: AssetImage('assets/images/welcome_images/login.png'),
-    //       fit: BoxFit.cover,
-    //     ),
-    //     logo: const Image(
-    //       image: AssetImage('assets/images/threads.png'),
-    //       height: 150,
-    //       width: 150,
-    //     ),
-    //     loadingIndicator: const CupertinoActivityIndicator(),
-    //     done: Done(
-    //       const MyApp(),
-    //     ),
-    //   ),
-    // ),
-    MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: SplashView(
-        duration: const Duration(milliseconds: 6000),
-        backgroundColor: Colors.white,
-        showStatusBar: true,
-        backgroundImageDecoration: const BackgroundImageDecoration(
-          image: AssetImage('assets/images/threads_animation.gif'),
-          fit: BoxFit.cover,
-        ),
-        done: Done(
-          const MyApp(),
+    ProviderScope(
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: SplashView(
+          duration: const Duration(milliseconds: 6000),
+          backgroundColor: Colors.white,
+          showStatusBar: true,
+          backgroundImageDecoration: const BackgroundImageDecoration(
+            image: AssetImage('assets/images/threads_animation.gif'),
+            fit: BoxFit.cover,
+          ),
+          done: Done(
+            const MyApp(),
+          ),
         ),
       ),
     ),

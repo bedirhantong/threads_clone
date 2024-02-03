@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../../common_widgets/refresh_indicator_model/threads_logo_indicator.dart';
-import '../../../../constants/app_starter.dart';
+import '../../view_model/app_starter.dart';
 import '../../objects/user.dart';
 import '../comments_of_post_screen/build_post_include_all.dart';
 

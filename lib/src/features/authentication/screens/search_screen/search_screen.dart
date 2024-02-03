@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../constants/app_starter.dart';
+import '../../view_model/app_starter.dart';
 import '../../objects/user.dart';
 
 class SearchScreen extends StatefulWidget {

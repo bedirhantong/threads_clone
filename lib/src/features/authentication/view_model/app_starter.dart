@@ -1,7 +1,9 @@
-import '../features/authentication/objects/thread.dart';
-import '../features/authentication/objects/user.dart';
+import 'package:flutter/material.dart';
+import '../objects/thread.dart';
+import '../objects/user.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class AppStarter {
+class AppStarter extends ChangeNotifier {
   static List<Thread> allThreads = [
     // Thread(
     //     whoPosted: User(
@@ -80,6 +82,81 @@ class AppStarter {
     //     username: '10urcetin',
     //     commentsListWidget: []),
   ];
+  late User currentUser;
+
+  void changeCurrentUser(User user) {
+    currentUser = user;
+    notifyListeners();
+  }
+
+  void createUser(User user) {
+    allUsers.add(user);
+    notifyListeners();
+  }
+
+  void addPostToUser(Thread thread, String email) {
+    User user = getCurrentUser(email);
+    user.threadsPosted.add(thread);
+    notifyListeners();
+  }
+
+  static Map<String, User> users = {
+    'admin@bdo.com': User(
+      name: "bedirhan tong",
+      email: "admin@bdo.com",
+      password: "123",
+      phoneNumber: "012321321",
+      bio: "",
+      profilePictureLink: 'assets/images/temp_user_images/betng.jpg',
+      username: 'betng',
+    ),
+    'srhn@bdo.com': User(
+      name: "serhan baymaz",
+      email: "srhn@bdo.com",
+      password: "123",
+      phoneNumber: "012321321",
+      bio: "",
+      profilePictureLink: 'assets/images/temp_user_images/sbaymaz.jpg',
+      username: 'sbaymaz',
+    ),
+    'mouses@bdo.com': User(
+      name: "Musa alatas",
+      email: "mouses@bdo.com",
+      password: "123",
+      phoneNumber: "012321321",
+      bio: "",
+      profilePictureLink: 'assets/images/temp_user_images/si_sharp.jpg',
+      username: 'si_sharp',
+    ),
+    '10nur@bdo.com': User(
+      name: "Onur cetin",
+      email: "10nur@bdo.com",
+      password: "123",
+      phoneNumber: "012321321",
+      bio: "",
+      profilePictureLink: 'assets/images/temp_user_images/10nurcetin.jpg',
+      username: '10nurcetin',
+    ),
+    'yusuf@bdo.com': User(
+      name: "Yusuf",
+      email: "yusuf@bdo.com",
+      password: "123",
+      phoneNumber: "012321321",
+      bio: "",
+      profilePictureLink: 'assets/images/temp_user_images/yucifer.jpg',
+      username: 'yucifer',
+    ),
+  };
+
+  User getCurrentUser(String email) {
+    late User foundUser;
+    for (var user in allUsers) {
+      if (user.email == email) {
+        foundUser = user;
+      }
+    }
+    return foundUser;
+  }
 
   static List<User> allUsers = [
     User(
@@ -129,3 +206,5 @@ class AppStarter {
     ),
   ];
 }
+
+final userViewModelProvider = ChangeNotifierProvider((ref) => AppStarter());
