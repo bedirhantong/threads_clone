@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
-
+import 'dart:io';
 import '../../objects/thread.dart';
 import 'comments_of_post_screen.dart';
 
@@ -9,6 +9,7 @@ class BuildPostWithEverything2 extends StatelessWidget {
     super.key,
     required this.thread,
   });
+
   final Thread thread;
 
   @override
@@ -32,7 +33,7 @@ class BuildPostWithEverything2 extends StatelessWidget {
                     borderRadius: BorderRadius.circular(30),
                     child: Image(
                       image: AssetImage(
-                          'assets/images/temp_user_images/${thread.whoPosted}.jpg'),
+                          'assets/images/temp_user_images/${thread.whoPosted.username}.jpg'),
                     ),
                   ),
                 ),
@@ -43,7 +44,7 @@ class BuildPostWithEverything2 extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 8.0),
                         child: Text(
-                          thread.username,
+                          thread.whoPosted.username,
                           style: const TextStyle(color: Colors.white),
                         ),
                       ),
@@ -74,24 +75,13 @@ class BuildPostWithEverything2 extends StatelessWidget {
                 ),
               ],
             ),
-            Center(
-              child: Row(
-                children: [
-                  // çubuk
-                  Padding(
-                    padding: const EdgeInsets.only(left: 28.0, right: 20),
-                    child: Container(
-                      height: thread.height,
-                      width: 1,
-                      color: Colors.grey,
-                    ),
-                  ),
-                  // post içeriği
-                  Expanded(
-                    child: buildContent(
-                        thread.whatImageIsPosted, thread.whatTextIsPosted),
-                  ),
-                ],
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Center(
+                child: Expanded(
+                  child: buildContent(
+                      thread.whatImageIsPosted, thread.whatTextIsPosted),
+                ),
               ),
             ),
             Row(
@@ -169,9 +159,7 @@ class BuildPostWithEverything2 extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          Image(
-            image: AssetImage(whatImageIsPosted),
-          ),
+          Image.file(File(whatImageIsPosted)),
         ],
       );
     } else if (whatImageIsPosted != null && whatTextIsPosted == null) {

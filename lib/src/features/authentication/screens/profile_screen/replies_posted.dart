@@ -1,25 +1,36 @@
 import 'package:flutter/material.dart';
-
-import '../../../../constants/app_starter.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../view_model/app_starter.dart';
 import '../comments_of_post_screen/build_post_include_all.dart';
 
-class RepliesPosted extends StatefulWidget {
+class RepliesPosted extends ConsumerStatefulWidget {
   const RepliesPosted({super.key});
 
   @override
-  State<RepliesPosted> createState() => _RepliesPostedState();
+  ConsumerState<RepliesPosted> createState() => _RepliesPostedState();
 }
 
-class _RepliesPostedState extends State<RepliesPosted> {
+class _RepliesPostedState extends ConsumerState<RepliesPosted> {
+  late AppStarter appStarter;
+
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: AppStarter.allThreads.length,
-      itemBuilder: (context, index) {
-        return BuildPostWithEverything2(
-          thread: AppStarter.allThreads[index],
-        );
-      },
-    );
+    appStarter = ref.watch(userViewModelProvider);
+    return appStarter.currentUser.threadsLiked.isNotEmpty
+        ? ListView.builder(
+            itemCount: appStarter.currentUser.threadsLiked.length,
+            itemBuilder: (context, index) {
+              return BuildPostWithEverything2(
+                thread: appStarter.currentUser.threadsLiked[
+                    appStarter.currentUser.threadsLiked.length - (index + 1)],
+              );
+            },
+          )
+        : const Center(
+            child: Text(
+              "No replied or liked thread exist",
+              style: TextStyle(color: Colors.white),
+            ),
+          );
   }
 }

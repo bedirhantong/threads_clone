@@ -8,7 +8,8 @@ class Users {
         password: '',
         phoneNumber: '',
         bio: '',
-        profilePictureLink: ''),
+        profilePictureLink: '',
+        username: ''),
   };
 
   static Map<String, User> usersD = {};

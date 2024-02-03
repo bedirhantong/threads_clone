@@ -23,7 +23,7 @@ dependencies:
   url_launcher: ^6.1.12
   custom_refresh_indicator: ^2.2.1
   image_picker: ^1.0.2
-
+  flutter_riverpod: ^2.4.9
 
 
 dev_dependencies:

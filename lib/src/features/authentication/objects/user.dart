@@ -3,7 +3,7 @@ import 'package:threads_clone/src/features/authentication/objects/thread.dart';
 class User {
   String? id;
   String name = "edit here";
-  String? username = "edit here";
+  String username = "edit here";
   String email = "edit here";
   String password = "edit here";
   String phoneNumber = "edit here";
@@ -17,7 +17,7 @@ class User {
   // String token = "";
 
   User({
-    this.username,
+    required this.username,
     required this.profilePictureLink,
     required this.name,
     required this.email,

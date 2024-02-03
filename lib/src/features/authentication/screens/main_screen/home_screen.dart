@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../../common_widgets/refresh_indicator_model/threads_logo_indicator.dart';
-import '../../../../constants/app_starter.dart';
+import '../../view_model/app_starter.dart';
 import '../../objects/user.dart';
 import '../comments_of_post_screen/build_post_include_all.dart';
 
@@ -40,14 +40,24 @@ class _HomeScreenState extends State<HomeScreen> {
                 )
               ],
             ),
-            child: ListView.builder(
-              itemCount: AppStarter.allThreads.length,
-              itemBuilder: (context, index) {
-                return BuildPostWithEverything2(
-                  thread: AppStarter.allThreads[index],
-                );
-              },
-            ),
+            child: AppStarter.allThreads.isNotEmpty
+                ? ListView.builder(
+                    itemCount: AppStarter.allThreads.length,
+                    itemBuilder: (context, index) {
+                      return BuildPostWithEverything2(
+                        thread: AppStarter.allThreads[
+                            AppStarter.allThreads.length - (index + 1)],
+                      );
+                    },
+                  )
+                : const Center(
+                    child: Text(
+                      "No shared threads found",
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
           ),
         ),
       ),

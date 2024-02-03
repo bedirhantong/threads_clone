@@ -12,19 +12,19 @@ class RequestsNotificationsScreen extends StatelessWidget {
           buildFollowingNotification(
               username: 'srhnbymz',
               notificationText: 'Request to follow you',
-              profileImageURL: 'assets/images/temp_user_images/serhan.jpg',
+              profileImageURL: 'assets/images/temp_user_images/sbaymaz.jpg',
               when: '3 min ago',
               type: 'request'),
           buildFollowingNotification(
               username: 'alatasms',
               notificationText: 'Request to follow you',
-              profileImageURL: 'assets/images/temp_user_images/musa.jpg',
+              profileImageURL: 'assets/images/temp_user_images/si_sharp.jpg',
               when: 'yesterday',
               type: 'request'),
           buildFollowingNotification(
               username: 'yuciferr',
               notificationText: 'Request to follow you',
-              profileImageURL: 'assets/images/temp_user_images/yusuf.jpg',
+              profileImageURL: 'assets/images/temp_user_images/yucifer.jpg',
               when: '2 days ago',
               type: 'request'),
         ],

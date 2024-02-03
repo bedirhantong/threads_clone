@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class LikesNotificationsScreen extends StatefulWidget {
   const LikesNotificationsScreen({super.key});
+
   @override
   State<LikesNotificationsScreen> createState() =>
       _LikesNotificationsScreenState();
@@ -17,13 +18,13 @@ class _LikesNotificationsScreenState extends State<LikesNotificationsScreen> {
           buildFollowingNotification(
               username: 'bedirhantng',
               notificationText: 'Liked your thread',
-              profileImageURL: 'assets/images/temp_user_images/me.jpg',
+              profileImageURL: 'assets/images/temp_user_images/betng.jpg',
               when: 'now',
               type: 'like'),
           buildFollowingNotification(
               username: 'srhnbymz',
               notificationText: 'Liked your thread',
-              profileImageURL: 'assets/images/temp_user_images/serhan.jpg',
+              profileImageURL: 'assets/images/temp_user_images/sbaymaz.jpg',
               when: '3 min ago',
               type: 'like'),
         ],

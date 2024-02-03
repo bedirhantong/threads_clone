@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../constants/app_starter.dart';
+import '../../view_model/app_starter.dart';
 import '../../objects/user.dart';
 
 class SearchScreen extends StatefulWidget {
@@ -28,14 +28,7 @@ class _SearchScreenState extends State<SearchScreen> {
             child: Align(
               alignment: Alignment.centerLeft,
               child: TextButton.icon(
-                onPressed: () {
-                  // method to show the search bar
-                  showSearch(
-                    context: context,
-                    // delegate to customize the search bar
-                    delegate: CustomSearchDelegateWithDummyData(),
-                  );
-                },
+                onPressed: () {},
                 icon: const Icon(
                   Icons.search,
                   color: Colors.white,
@@ -70,27 +63,6 @@ class _SearchScreenState extends State<SearchScreen> {
               name: AppStarter.allUsers[index].name,
             );
           },
-        ),
-      ),
-    );
-  }
-
-  Expanded buildExpandedSearchBar(Color color) {
-    return Expanded(
-      child: Container(
-        color: color,
-        child: IconButton(
-          onPressed: () {
-            // method to show the search bar
-            showSearch(
-                context: context,
-                // delegate to customize the search bar
-                delegate: CustomSearchDelegateWithDummyData());
-          },
-          icon: const Icon(
-            Icons.search,
-            color: Colors.white,
-          ),
         ),
       ),
     );
@@ -139,15 +111,17 @@ class BuildFollowableUser extends StatelessWidget {
           Image.asset('assets/icons/verified.png')
         ],
       ),
-      subtitle: const Text(
-        'Serhan Baymaz',
-        style: TextStyle(color: Colors.grey, fontWeight: FontWeight.normal),
+      subtitle: Text(
+        name,
+        style:
+            const TextStyle(color: Colors.grey, fontWeight: FontWeight.normal),
       ),
       trailing: ElevatedButton(
         style: ElevatedButton.styleFrom(
           backgroundColor: const Color(0xAB393939),
           shape: RoundedRectangleBorder(
             side: const BorderSide(
+              width: 1,
               color: Colors.grey,
             ),
             borderRadius: BorderRadius.circular(10.0),
@@ -158,108 +132,6 @@ class BuildFollowableUser extends StatelessWidget {
           'Follow',
           style: TextStyle(color: Colors.white),
         ),
-      ),
-    );
-  }
-}
-
-class CustomSearchDelegateWithDummyData extends SearchDelegate {
-// Demo list to show querying
-  List<BuildFollowableUser> searchTerms = [
-    const BuildFollowableUser(
-      imageAssetLink: 'assets/images/temp_user_images/serhan.jpg',
-      username: 'srhnbymz',
-      name: 'Serhan Baymaz',
-    ),
-    const BuildFollowableUser(
-      imageAssetLink: 'assets/images/temp_user_images/sinan.jpg',
-      username: 'demir_exe',
-      name: 'Sinan Demir',
-    ),
-    const BuildFollowableUser(
-      imageAssetLink: 'assets/images/temp_user_images/musa.jpg',
-      username: 'alatasms',
-      name: 'Musa Alataş',
-    ),
-    const BuildFollowableUser(
-      imageAssetLink: 'assets/images/temp_user_images/yusuf.jpg',
-      username: 'yuciferr',
-      name: 'Yusuf Samed Çelik',
-    ),
-    const BuildFollowableUser(
-      imageAssetLink: 'assets/images/temp_user_images/onur.jpg',
-      username: '10nurcetin',
-      name: 'Onur Çetin',
-    ),
-  ];
-
-// first overwrite to
-// clear the search text
-  @override
-  List<Widget>? buildActions(BuildContext context) {
-    return [
-      IconButton(
-        onPressed: () {
-          query = '';
-        },
-        icon: const Icon(Icons.clear),
-      ),
-    ];
-  }
-
-// second overwrite to pop out of search menu
-  @override
-  Widget? buildLeading(BuildContext context) {
-    return IconButton(
-      onPressed: () {
-        close(context, null);
-      },
-      icon: const Icon(Icons.arrow_back),
-    );
-  }
-
-// third overwrite to show query result
-  @override
-  Widget buildResults(BuildContext context) {
-    List<String> matchQuery = [];
-    for (var fruit in searchTerms) {
-      if (fruit.username.toLowerCase().contains(query.toLowerCase())) {
-        matchQuery.add(fruit.username);
-      }
-    }
-    return Container(
-      color: Colors.black, //
-      child: ListView.builder(
-        itemCount: matchQuery.length,
-        itemBuilder: (context, index) {
-          var result = matchQuery[index];
-          return ListTile(
-            focusColor: Colors.black,
-            title: Text(result),
-          );
-        },
-      ),
-    );
-  }
-
-// last overwrite to show the
-// querying process at the runtime
-  @override
-  Widget buildSuggestions(BuildContext context) {
-    List<BuildFollowableUser> matchQuery = [];
-    for (var fruit in searchTerms) {
-      if (fruit.username.toLowerCase().contains(query.toLowerCase())) {
-        matchQuery.add(fruit);
-      }
-    }
-    return Container(
-      color: Colors.black,
-      child: ListView.builder(
-        itemCount: matchQuery.length,
-        itemBuilder: (context, index) {
-          var result = matchQuery[index];
-          return result;
-        },
       ),
     );
   }

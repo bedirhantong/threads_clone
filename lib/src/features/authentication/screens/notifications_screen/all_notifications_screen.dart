@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class AllNotificationsScreen extends StatefulWidget {
   const AllNotificationsScreen({super.key});
+
   @override
   State<AllNotificationsScreen> createState() => _AllNotificationsScreenState();
 }
@@ -17,25 +18,25 @@ class _AllNotificationsScreenState extends State<AllNotificationsScreen> {
               username: 'bedirhantng',
               actionTo: 'What a cold day',
               notificationText: 'It is amazing bro',
-              profileImageURL: 'assets/images/temp_user_images/me.jpg',
+              profileImageURL: 'assets/images/temp_user_images/betng.jpg',
               when: 'now',
               type: 'reply'),
           buildFollowingNotification(
               username: 'srhnbymz',
               notificationText: 'Liked your thread',
-              profileImageURL: 'assets/images/temp_user_images/serhan.jpg',
+              profileImageURL: 'assets/images/temp_user_images/sbaymaz.jpg',
               when: '3 min ago',
               type: 'like'),
           buildFollowingNotification(
               username: 'alatasms',
               notificationText: 'Followed you',
-              profileImageURL: 'assets/images/temp_user_images/musa.jpg',
+              profileImageURL: 'assets/images/temp_user_images/si_sharp.jpg',
               when: 'yesterday',
               type: 'follow'),
           buildFollowingNotification(
               username: 'yuciferr',
               notificationText: 'Followed you',
-              profileImageURL: 'assets/images/temp_user_images/yusuf.jpg',
+              profileImageURL: 'assets/images/temp_user_images/yucifer.jpg',
               when: '2 days ago',
               type: 'follow'),
         ],

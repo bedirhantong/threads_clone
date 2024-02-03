@@ -12,13 +12,13 @@ class MentionsNotificationsScreen extends StatelessWidget {
           buildFollowingNotification(
               username: 'bedirhantng',
               notificationText: 'mentioned you in a thread',
-              profileImageURL: 'assets/images/temp_user_images/me.jpg',
+              profileImageURL: 'assets/images/temp_user_images/betng.jpg',
               when: 'now',
               type: 'mention'),
           buildFollowingNotification(
               username: 'srhnbymz',
               notificationText: 'mentioned you in a thread',
-              profileImageURL: 'assets/images/temp_user_images/serhan.jpg',
+              profileImageURL: 'assets/images/temp_user_images/sbaymaz.jpg',
               when: '3 min ago',
               type: 'mention'),
         ],
