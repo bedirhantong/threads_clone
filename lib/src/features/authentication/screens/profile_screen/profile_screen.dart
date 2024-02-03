@@ -1,22 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:threads_clone/src/features/authentication/screens/profile_screen/replies_posted.dart';
 import 'package:threads_clone/src/features/authentication/screens/profile_screen/threads_posted.dart';
 import '../../objects/user.dart';
+import '../../view_model/app_starter.dart';
 import 'edit_profile.dart';
 import 'settings_screen.dart';
 
-class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({super.key, required this.user});
+class ProfileScreen extends ConsumerStatefulWidget {
+  const ProfileScreen({super.key});
 
   @override
-  State<ProfileScreen> createState() => _ProfileScreenState();
-
-  final User user;
+  ConsumerState<ProfileScreen> createState() => _ProfileScreenState();
 }
 
-class _ProfileScreenState extends State<ProfileScreen> {
+class _ProfileScreenState extends ConsumerState<ProfileScreen> {
+  late AppStarter appStarter;
+
   @override
   Widget build(BuildContext context) {
+    appStarter = ref.watch(userViewModelProvider);
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -27,9 +31,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              buildListTileOfUsername(widget.user),
-              buildPaddingOfUserPref1(widget.user.bio),
-              buildPaddingOfUserPref2(widget.user.phoneNumber),
+              buildListTileOfUsername(appStarter.currentUser),
+              buildPaddingOfUserPref2(appStarter.currentUser.bio),
               buildProfileSettingsButtons(),
               Expanded(
                 flex: 7,
@@ -108,7 +111,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         style: const TextStyle(fontSize: 25, color: Colors.white),
       ),
       subtitle: Text(
-        user.name,
+        user.username,
         style: const TextStyle(fontSize: 14, color: Colors.white),
       ),
       trailing: CircleAvatar(

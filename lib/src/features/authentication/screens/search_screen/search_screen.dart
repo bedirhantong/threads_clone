@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import '../../view_model/app_starter.dart';
-import '../../objects/user.dart';
 
 class SearchScreen extends StatefulWidget {
-  const SearchScreen({super.key, required this.user});
+  const SearchScreen({super.key});
 
   @override
   State<SearchScreen> createState() => _SearchScreenState();
-  final User user;
 }
 
 class _SearchScreenState extends State<SearchScreen> {

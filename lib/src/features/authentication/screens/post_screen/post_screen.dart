@@ -5,14 +5,12 @@ import 'package:threads_clone/src/features/authentication/objects/thread.dart';
 import 'package:threads_clone/src/features/authentication/screens/main_screen/main_screen.dart';
 import 'dart:io';
 import '../../view_model/app_starter.dart';
-import '../../objects/user.dart';
 
 class PostScreen extends ConsumerStatefulWidget {
-  const PostScreen({super.key, required this.user});
+  const PostScreen({super.key});
 
   @override
   ConsumerState<PostScreen> createState() => _PostScreenState();
-  final User user;
 }
 
 class _PostScreenState extends ConsumerState<PostScreen> {
@@ -43,6 +41,7 @@ class _PostScreenState extends ConsumerState<PostScreen> {
   @override
   Widget build(BuildContext context) {
     final userViewModel = ref.watch(userViewModelProvider);
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -78,7 +77,7 @@ class _PostScreenState extends ConsumerState<PostScreen> {
                         borderRadius: BorderRadius.circular(30),
                         child: Image(
                           image: AssetImage(
-                              'assets/images/temp_user_images/${widget.user.username}.jpg'),
+                              'assets/images/temp_user_images/${userViewModel.currentUser.username}.jpg'),
                         ),
                       ),
                     ),
@@ -90,7 +89,7 @@ class _PostScreenState extends ConsumerState<PostScreen> {
                             padding:
                                 const EdgeInsets.symmetric(horizontal: 8.0),
                             child: Text(
-                              widget.user.username,
+                              userViewModel.currentUser.username,
                               style: const TextStyle(color: Colors.white),
                             ),
                           ),
@@ -220,7 +219,7 @@ class _PostScreenState extends ConsumerState<PostScreen> {
                 onPressed: () {
                   ref.read(userViewModelProvider).currentUser.threadsPosted.add(
                         Thread(
-                          whoPosted: widget.user,
+                          whoPosted: userViewModel.currentUser,
                           whenPosted: "2 day",
                           likeNum: 0,
                           whatTextIsPosted: textContent,
@@ -230,7 +229,7 @@ class _PostScreenState extends ConsumerState<PostScreen> {
 
                   AppStarter.allThreads.add(
                     Thread(
-                      whoPosted: widget.user,
+                      whoPosted: userViewModel.currentUser,
                       whenPosted: "2 day",
                       likeNum: 0,
                       whatTextIsPosted: textContent,
@@ -240,9 +239,7 @@ class _PostScreenState extends ConsumerState<PostScreen> {
                   Navigator.pushAndRemoveUntil(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => MainScreen(
-                        user: widget.user,
-                      ),
+                      builder: (context) => const MainScreen(),
                     ),
                     (route) => false,
                   );
