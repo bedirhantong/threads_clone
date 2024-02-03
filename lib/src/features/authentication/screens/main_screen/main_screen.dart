@@ -8,12 +8,10 @@ import '../profile_screen/profile_screen.dart';
 import '../search_screen/search_screen.dart';
 
 class MainScreen extends StatefulWidget {
-  const MainScreen({super.key, required this.user});
+  const MainScreen({super.key});
 
   @override
   State<MainScreen> createState() => _MainScreenState();
-
-  final User user;
 }
 
 class _MainScreenState extends State<MainScreen> {
@@ -25,21 +23,11 @@ class _MainScreenState extends State<MainScreen> {
     // TODO: implement initState
     super.initState();
     _widgetOptions = <Widget>[
-      HomeScreen(
-        user: widget.user,
-      ),
-      SearchScreen(
-        user: widget.user,
-      ),
-      PostScreen(
-        user: widget.user,
-      ),
-      NotificationsScreen(
-        user: widget.user,
-      ),
-      ProfileScreen(
-        user: widget.user,
-      ),
+      const HomeScreen(),
+      const SearchScreen(),
+      const PostScreen(),
+      const NotificationsScreen(),
+      const ProfileScreen(),
     ];
   }
 

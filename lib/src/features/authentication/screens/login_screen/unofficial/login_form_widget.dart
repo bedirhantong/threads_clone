@@ -116,9 +116,7 @@ class _LoginFormState extends BaseState<LoginForm> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => MainScreen(
-                              user: user,
-                            ),
+                            builder: (context) => MainScreen(),
                           ),
                         );
                       } else {
